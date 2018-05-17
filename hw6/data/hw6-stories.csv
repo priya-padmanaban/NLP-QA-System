@@ -1,0 +1,1392 @@
+sch,sch_dep,sch_par,sid,story_dep,story_par,text
+"There once was a crow.  The crow was sitting on a branch of a tree.  Some cheese was in the beak of the crow.  
+A fox observed the crow and tried to discover how to get the cheese.  
+The fox came and stood under the tree.  
+The fox looked toward the crow and said that he saw a noble bird who was above him.  
+The fox said that the beauty of the bird was incomparable.  
+The fox said that the hue of the plumage of the bird was exquisite.  
+The fox said that -- if the sweetness of the voice of the bird is equal to the fairness of the appearance of the bird -- the bird would be undoubtedly the queen of every bird.  
+The crow felt that the fox had flattered her and cawed loudly in order for she to show him that she was able to sing.  
+The cheese fell.  
+The fox snatched the cheese, said that the crow was able to sing and the fox said that the crow needed wits.  
+","1	There	there	_	EX	_	3	expl	_	_
+2	once	once	_	RB	_	3	advmod	_	_
+3	was	be	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	crow	crow	_	NN	_	3	nsubj	_	_
+6	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	crow	crow	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	aux	_	_
+4	sitting	sit	_	VBG	_	0	root	_	_
+5	on	on	_	IN	_	7	case	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	branch	branch	_	NN	_	4	nmod	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	tree	tree	_	NN	_	7	nmod	_	_
+11	.	.	_	.	_	4	punct	_	_
+
+1	Some	some	_	DT	_	2	det	_	_
+2	cheese	cheese	_	NN	_	6	nsubj	_	_
+3	was	be	_	VBD	_	6	cop	_	_
+4	in	in	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	beak	beak	_	NN	_	0	root	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	crow	crow	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	6	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	observed	observe	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	crow	crow	_	NN	_	3	dobj	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	tried	try	_	VBD	_	3	conj	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	discover	discover	_	VB	_	7	xcomp	_	_
+10	how	how	_	WRB	_	12	advmod	_	_
+11	to	to	_	TO	_	12	mark	_	_
+12	get	get	_	VB	_	9	ccomp	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	cheese	cheese	_	NN	_	12	dobj	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	came	come	_	VBD	_	0	root	_	_
+4	and	and	_	CC	_	3	cc	_	_
+5	stood	stand	_	VBD	_	3	conj	_	_
+6	under	under	_	IN	_	8	case	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	tree	tree	_	NN	_	5	nmod	_	_
+9	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	looked	look	_	VBD	_	0	root	_	_
+4	toward	toward	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	crow	crow	_	NN	_	3	nmod	_	_
+7	and	and	_	CC	_	3	cc	_	_
+8	said	say	_	VBD	_	3	conj	_	_
+9	that	that	_	IN	_	11	mark	_	_
+10	he	he	_	PRP	_	11	nsubj	_	_
+11	saw	see	_	VBD	_	8	ccomp	_	_
+12	a	a	_	DT	_	14	det	_	_
+13	noble	noble	_	JJ	_	14	amod	_	_
+14	bird	bird	_	NN	_	11	dobj	_	_
+15	who	who	_	WP	_	18	nsubj	_	_
+16	was	be	_	VBD	_	18	cop	_	_
+17	above	above	_	IN	_	18	case	_	_
+18	him	he	_	PRP	_	14	acl:relcl	_	_
+19	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	11	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	beauty	beauty	_	NN	_	11	nsubj	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	bird	bird	_	NN	_	6	nmod	_	_
+10	was	be	_	VBD	_	11	cop	_	_
+11	incomparable	incomparable	_	JJ	_	3	ccomp	_	_
+12	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	14	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	hue	hue	_	NN	_	14	nsubj	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	plumage	plumage	_	NN	_	6	nmod	_	_
+10	of	of	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	bird	bird	_	NN	_	9	nmod	_	_
+13	was	be	_	VBD	_	14	cop	_	_
+14	exquisite	exquisite	_	JJ	_	3	ccomp	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	DT	_	3	dep	_	_
+5	--	--	_	:	_	4	punct	_	_
+6	if	if	_	IN	_	16	mark	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	sweetness	sweetness	_	NN	_	16	nsubj	_	_
+9	of	of	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	voice	voice	_	NN	_	8	nmod	_	_
+12	of	of	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	bird	bird	_	NN	_	11	nmod	_	_
+15	is	be	_	VBZ	_	16	cop	_	_
+16	equal	equal	_	JJ	_	5	root	_	_
+17	to	to	_	TO	_	19	case	_	_
+18	the	the	_	DT	_	19	det	_	_
+19	fairness	fairness	_	NN	_	16	nmod	_	_
+20	of	of	_	IN	_	22	case	_	_
+21	the	the	_	DT	_	22	det	_	_
+22	appearance	appearance	_	NN	_	19	nmod	_	_
+23	of	of	_	IN	_	25	case	_	_
+24	the	the	_	DT	_	25	det	_	_
+25	bird	bird	_	NN	_	22	nmod	_	_
+26	--	--	_	:	_	33	punct	_	_
+27	the	the	_	DT	_	28	det	_	_
+28	bird	bird	_	NN	_	33	nsubj	_	_
+29	would	would	_	MD	_	33	aux	_	_
+30	be	be	_	VB	_	33	cop	_	_
+31	undoubtedly	undoubtedly	_	RB	_	33	advmod	_	_
+32	the	the	_	DT	_	33	det	_	_
+33	queen	queen	_	NN	_	16	dep	_	_
+34	of	of	_	IN	_	36	case	_	_
+35	every	every	_	DT	_	36	det	_	_
+36	bird	bird	_	NN	_	33	nmod	_	_
+37	.	.	_	.	_	16	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	crow	crow	_	NN	_	3	nsubj	_	_
+3	felt	feel	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	8	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	fox	fox	_	NN	_	8	nsubj	_	_
+7	had	have	_	VBD	_	8	aux	_	_
+8	flattered	flatter	_	VBN	_	3	ccomp	_	_
+9	her	she	_	PRP$	_	8	dobj	_	_
+10	and	and	_	CC	_	8	cc	_	_
+11	cawed	caw	_	VBD	_	8	conj	_	_
+12	loudly	loudly	_	RB	_	11	advmod	_	_
+13	in	in	_	IN	_	18	mark	_	_
+14	order	order	_	NN	_	13	mwe	_	_
+15	for	for	_	IN	_	18	mark	_	_
+16	she	she	_	PRP	_	18	nsubj	_	_
+17	to	to	_	TO	_	18	mark	_	_
+18	show	show	_	VB	_	11	advcl	_	_
+19	him	he	_	PRP	_	18	dobj	_	_
+20	that	that	_	IN	_	23	mark	_	_
+21	she	she	_	PRP	_	23	nsubj	_	_
+22	was	be	_	VBD	_	23	cop	_	_
+23	able	able	_	JJ	_	18	ccomp	_	_
+24	to	to	_	TO	_	25	mark	_	_
+25	sing	sing	_	VB	_	23	xcomp	_	_
+26	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	cheese	cheese	_	NN	_	3	nsubj	_	_
+3	fell	fall	_	VBD	_	0	root	_	_
+4	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	3	nsubj	_	_
+3	snatched	snatch	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	cheese	cheese	_	NN	_	3	dobj	_	_
+6	,	,	_	,	_	3	punct	_	_
+7	said	say	_	VBD	_	3	dep	_	_
+8	that	that	_	IN	_	12	mark	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	crow	crow	_	NN	_	12	nsubj	_	_
+11	was	be	_	VBD	_	12	cop	_	_
+12	able	able	_	JJ	_	7	ccomp	_	_
+13	to	to	_	TO	_	14	mark	_	_
+14	sing	sing	_	VB	_	12	xcomp	_	_
+15	and	and	_	CC	_	14	cc	_	_
+16	the	the	_	DT	_	17	det	_	_
+17	fox	fox	_	NN	_	18	nsubj	_	_
+18	said	say	_	VBD	_	14	conj	_	_
+19	that	that	_	IN	_	22	mark	_	_
+20	the	the	_	DT	_	21	det	_	_
+21	crow	crow	_	NN	_	22	nsubj	_	_
+22	needed	need	_	VBD	_	18	ccomp	_	_
+23	wits	wit	_	NNS	_	22	dobj	_	_
+24	.	.	_	.	_	3	punct	_	_
+
+","(S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (DT a) (NN crow))) (. .)))
+(S (NP (DT The) (NN crow)) (VP (VBD was) (VP (VBG sitting) (PP (IN on) (NP (NP (DT a) (NN branch)) (PP (IN of) (NP (DT a) (NN tree))))))) (. .)))
+(S (NP (DT Some) (NN cheese)) (VP (VBD was) (PP (IN in) (NP (NP (DT the) (NN beak)) (PP (IN of) (NP (DT the) (NN crow)))))) (. .)))
+(S (NP (DT A) (NN fox)) (VP (VP (VBD observed) (NP (DT the) (NN crow))) (CC and) (VP (VBD tried) (S (VP (TO to) (VP (VB discover) (SBAR (WHADVP (WRB how)) (S (VP (TO to) (VP (VB get) (NP (DT the) (NN cheese))))))))))) (. .)))
+(S (NP (DT The) (NN fox)) (VP (VBD came) (CC and) (VBD stood) (PP (IN under) (NP (DT the) (NN tree)))) (. .)))
+(S (NP (DT The) (NN fox)) (VP (VP (VBD looked) (PP (IN toward) (NP (DT the) (NN crow)))) (CC and) (VP (VBD said) (SBAR (IN that) (S (NP (PRP he)) (VP (VBD saw) (NP (NP (DT a) (JJ noble) (NN bird)) (SBAR (WHNP (WP who)) (S (VP (VBD was) (PP (IN above) (NP (PRP him)))))))))))) (. .)))
+(S (NP (DT The) (NN fox)) (VP (VBD said) (SBAR (IN that) (S (NP (NP (DT the) (NN beauty)) (PP (IN of) (NP (DT the) (NN bird)))) (VP (VBD was) (ADJP (JJ incomparable)))))) (. .)))
+(S (NP (DT The) (NN fox)) (VP (VBD said) (SBAR (IN that) (S (NP (NP (DT the) (NN hue)) (PP (IN of) (NP (NP (DT the) (NN plumage)) (PP (IN of) (NP (DT the) (NN bird)))))) (VP (VBD was) (ADJP (JJ exquisite)))))) (. .)))
+(S (NP (DT The) (NN fox)) (VP (VBD said) (NP (NP (DT that)) (PRN (: --) (SBAR (IN if) (S (NP (NP (DT the) (NN sweetness)) (PP (IN of) (NP (NP (DT the) (NN voice)) (PP (IN of) (NP (DT the) (NN bird)))))) (VP (VBZ is) (ADJP (JJ equal) (PP (TO to) (NP (NP (DT the) (NN fairness)) (PP (IN of) (NP (NP (DT the) (NN appearance)) (PP (IN of) (NP (DT the) (NN bird))))))))))) (: --)) (SBAR (S (NP (DT the) (NN bird)) (VP (MD would) (VP (VB be) (NP (NP (ADVP (RB undoubtedly)) (DT the) (NN queen)) (PP (IN of) (NP (DT every) (NN bird)))))))))) (. .)))
+(S (NP (DT The) (NN crow)) (VP (VP (VBD felt) (SBAR (IN that) (S (NP (DT the) (NN fox)) (VP (VBD had) (VP (VBN flattered) (NP (PRP$ her))))))) (CC and) (VP (VBD cawed) (ADVP (RB loudly) (PP (IN in) (NP (NP (NN order)) (PP (IN for) (NP (PRP she)))))) (S (VP (TO to) (VP (VB show) (NP (PRP him)) (SBAR (IN that) (S (NP (PRP she)) (VP (VBD was) (ADJP (JJ able) (S (VP (TO to) (VP (VB sing))))))))))))) (. .)))
+(S (NP (DT The) (NN cheese)) (VP (VBD fell)) (. .)))
+(S (S (NP (DT The) (NN fox)) (VP (VBD snatched) (NP (DT the) (NN cheese)))) (, ,) (VP (VBD said) (SBAR (IN that) (S (NP (DT the) (NN crow)) (VP (VBD was) (ADJP (JJ able) (S (VP (TO to) (VP (VB sing))))))))) (CC and) (S (NP (DT the) (NN fox)) (VP (VBD said) (SBAR (IN that) (S (NP (DT the) (NN crow)) (VP (VBD needed) (NP (NNS wits))))))) (. .)))
+",fables-01,"1	A	a	_	DT	_	2	det	_	_
+2	Crow	crow	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	aux	_	_
+4	sitting	sit	_	VBG	_	0	root	_	_
+5	on	on	_	IN	_	7	case	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	branch	branch	_	NN	_	4	nmod	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	tree	tree	_	NN	_	7	nmod	_	_
+11	with	with	_	IN	_	13	case	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	piece	piece	_	NN	_	10	nmod	_	_
+14	of	of	_	IN	_	15	case	_	_
+15	cheese	cheese	_	NN	_	13	nmod	_	_
+16	in	in	_	IN	_	18	case	_	_
+17	her	she	_	PRP$	_	18	nmod:poss	_	_
+18	beak	beak	_	NN	_	13	nmod	_	_
+19	when	when	_	WRB	_	22	advmod	_	_
+20	a	a	_	DT	_	21	det	_	_
+21	Fox	Fox	_	NNP	_	22	nsubj	_	_
+22	observed	observe	_	VBD	_	4	advcl	_	_
+23	her	she	_	PRP	_	22	dobj	_	_
+24	and	and	_	CC	_	22	cc	_	_
+25	set	set	_	VB	_	22	conj	_	_
+26	his	he	_	PRP$	_	27	nmod:poss	_	_
+27	wits	wit	_	NNS	_	25	dobj	_	_
+28	to	to	_	TO	_	29	mark	_	_
+29	work	work	_	VB	_	25	advcl	_	_
+30	to	to	_	TO	_	31	mark	_	_
+31	discover	discover	_	VB	_	29	xcomp	_	_
+32	some	some	_	DT	_	33	det	_	_
+33	way	way	_	NN	_	31	dobj	_	_
+34	of	of	_	IN	_	35	mark	_	_
+35	getting	get	_	VBG	_	33	acl	_	_
+36	the	the	_	DT	_	37	det	_	_
+37	cheese	cheese	_	NN	_	35	dobj	_	_
+38	.	.	_	.	_	4	punct	_	_
+
+1	Coming	come	_	VBG	_	0	root	_	_
+2	and	and	_	CC	_	1	cc	_	_
+3	standing	stand	_	VBG	_	1	conj	_	_
+4	under	under	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	tree	tree	_	NN	_	3	nmod	_	_
+7	he	he	_	PRP	_	8	nsubj	_	_
+8	looked	look	_	VBD	_	6	acl:relcl	_	_
+9	up	up	_	RP	_	8	compound:prt	_	_
+10	and	and	_	CC	_	8	cc	_	_
+11	said	say	_	VBD	_	8	conj	_	_
+12	,	,	_	,	_	11	punct	_	_
+13	``	``	_	``	_	11	punct	_	_
+14	What	what	_	WP	_	11	dep	_	_
+15	a	a	_	DT	_	17	det	_	_
+16	noble	noble	_	JJ	_	17	amod	_	_
+17	bird	bird	_	NN	_	14	nsubj	_	_
+18	I	I	_	PRP	_	19	nsubj	_	_
+19	see	see	_	VBP	_	17	acl:relcl	_	_
+20	above	above	_	IN	_	21	case	_	_
+21	me	I	_	PRP	_	19	nmod	_	_
+22	!	!	_	.	_	14	punct	_	_
+
+1	Her	she	_	PRP$	_	2	nmod:poss	_	_
+2	beauty	beauty	_	NN	_	5	nsubj	_	_
+3	is	be	_	VBZ	_	5	cop	_	_
+4	without	without	_	IN	_	5	case	_	_
+5	equal	equal	_	JJ	_	0	root	_	_
+6	,	,	_	,	_	5	punct	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	hue	hue	_	NN	_	5	dep	_	_
+9	of	of	_	IN	_	11	case	_	_
+10	her	she	_	PRP$	_	11	nmod:poss	_	_
+11	plumage	plumage	_	NN	_	8	nmod	_	_
+12	exquisite	exquisite	_	JJ	_	11	amod	_	_
+13	.	.	_	.	_	5	punct	_	_
+
+1	If	if	_	IN	_	7	mark	_	_
+2	only	only	_	RB	_	4	advmod	_	_
+3	her	she	_	PRP$	_	4	nmod:poss	_	_
+4	voice	voice	_	NN	_	7	nsubj	_	_
+5	is	be	_	VBZ	_	7	cop	_	_
+6	as	as	_	IN	_	7	advmod	_	_
+7	sweet	sweet	_	JJ	_	15	advcl	_	_
+8	as	as	_	IN	_	12	mark	_	_
+9	her	she	_	PRP$	_	10	nmod:poss	_	_
+10	looks	look	_	NNS	_	12	nsubj	_	_
+11	are	be	_	VBP	_	12	cop	_	_
+12	fair	fair	_	JJ	_	7	advcl	_	_
+13	,	,	_	,	_	15	punct	_	_
+14	she	she	_	PRP	_	15	nsubj	_	_
+15	ought	ought	_	MD	_	0	root	_	_
+16	without	without	_	IN	_	17	case	_	_
+17	doubt	doubt	_	NN	_	15	nmod	_	_
+18	to	to	_	TO	_	20	mark	_	_
+19	be	be	_	VB	_	20	cop	_	_
+20	Queen	queen	_	NN	_	15	xcomp	_	_
+21	of	of	_	IN	_	23	case	_	_
+22	the	the	_	DT	_	23	det	_	_
+23	Birds	Birds	_	NNP	_	20	nmod	_	_
+24	.	.	_	.	_	15	punct	_	_
+25	''	''	_	''	_	15	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	Crow	Crow	_	NNP	_	5	nsubjpass	_	_
+3	was	be	_	VBD	_	5	auxpass	_	_
+4	hugely	hugely	_	RB	_	5	advmod	_	_
+5	flattered	flatter	_	VBN	_	0	root	_	_
+6	by	by	_	IN	_	7	case	_	_
+7	this	this	_	DT	_	5	nmod	_	_
+8	,	,	_	,	_	5	punct	_	_
+9	and	and	_	CC	_	5	cc	_	_
+10	just	just	_	RB	_	12	advmod	_	_
+11	to	to	_	TO	_	12	mark	_	_
+12	show	show	_	VB	_	5	conj	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	Fox	Fox	_	NNP	_	12	dobj	_	_
+15	that	that	_	IN	_	18	mark	_	_
+16	she	she	_	PRP	_	18	nsubj	_	_
+17	could	could	_	MD	_	18	aux	_	_
+18	sing	sing	_	VB	_	12	ccomp	_	_
+19	she	she	_	PRP	_	20	nsubj	_	_
+20	gave	give	_	VBD	_	18	ccomp	_	_
+21	a	a	_	DT	_	23	det	_	_
+22	loud	loud	_	JJ	_	23	amod	_	_
+23	caw	caw	_	NN	_	20	dobj	_	_
+24	.	.	_	.	_	5	punct	_	_
+
+1	Down	down	_	NN	_	2	nsubj	_	_
+2	came	come	_	VBD	_	0	root	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	cheese	cheese	_	NN	_	2	dobj	_	_
+5	,	,	_	,	_	4	punct	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	course	course	_	NN	_	4	nmod	_	_
+8	,	,	_	,	_	4	punct	_	_
+9	and	and	_	CC	_	4	cc	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	Fox	Fox	_	NNP	_	17	nsubj	_	_
+12	,	,	_	,	_	11	punct	_	_
+13	snatching	snatch	_	VBG	_	11	dep	_	_
+14	it	it	_	PRP	_	13	dobj	_	_
+15	up	up	_	RP	_	13	compound:prt	_	_
+16	,	,	_	,	_	11	punct	_	_
+17	said	say	_	VBD	_	4	conj	_	_
+18	,	,	_	,	_	17	punct	_	_
+19	``	``	_	``	_	17	punct	_	_
+20	You	you	_	PRP	_	21	nsubj	_	_
+21	have	have	_	VBP	_	17	ccomp	_	_
+22	a	a	_	DT	_	28	dep	_	_
+23	voice	voice	_	NN	_	28	dep	_	_
+24	,	,	_	,	_	23	punct	_	_
+25	madam	madam	_	NN	_	23	appos	_	_
+26	,	,	_	,	_	23	punct	_	_
+27	I	I	_	PRP	_	28	nsubj	_	_
+28	see	see	_	VBP	_	21	dobj	_	_
+29	:	:	_	:	_	28	punct	_	_
+30	what	what	_	WP	_	32	dobj	_	_
+31	you	you	_	PRP	_	32	nsubj	_	_
+32	want	want	_	VBP	_	34	csubj	_	_
+33	is	be	_	VBZ	_	34	cop	_	_
+34	wits	wit	_	NNS	_	28	parataxis	_	_
+35	.	.	_	.	_	2	punct	_	_
+36	''	''	_	''	_	2	punct	_	_
+
+","(S (NP (DT A) (NN Crow)) (VP (VBD was) (VP (VBG sitting) (PP (IN on) (NP (NP (DT a) (NN branch)) (PP (IN of) (NP (NP (DT a) (NN tree)) (PP (IN with) (NP (NP (DT a) (NN piece)) (PP (IN of) (NP (NP (NN cheese)) (PP (IN in) (NP (PRP$ her) (NN beak))))))))))) (SBAR (WHADVP (WRB when)) (S (NP (DT a) (NNP Fox)) (VP (VP (VBD observed) (NP (PRP her))) (CC and) (VP (VB set) (NP (PRP$ his) (NNS wits)) (S (VP (TO to) (VP (VB work) (S (VP (TO to) (VP (VB discover) (NP (NP (DT some) (NN way)) (PP (IN of) (S (VP (VBG getting) (NP (DT the) (NN cheese)))))))))))))))))) (. .)))
+(S (S (VP (VBG Coming) (CC and) (VBG standing) (PP (IN under) (NP (DT the) (NN tree))))) (NP (PRP he)) (VP (VP (VBD looked) (PRT (RP up))) (CC and) (VP (VBD said) (, ,) (`` ``) (S (NP (WP What)) (NP (NP (DT a) (JJ noble) (NN bird)) (SBAR (S (NP (PRP I)) (VP (VBP see) (PP (IN above) (NP (PRP me)))))))))) (. !)))
+(S (S (NP (PRP$ Her) (NN beauty)) (VP (VBZ is) (PP (IN without) (ADJP (JJ equal))))) (, ,) (NP (NP (DT the) (NN hue)) (PP (IN of) (NP (PRP$ her) (NN plumage)))) (VP (JJ exquisite)) (. .)))
+(S (SBAR (IN If) (RB only) (S (NP (PRP$ her) (NN voice)) (VP (VBZ is) (ADJP (IN as) (JJ sweet)) (SBAR (IN as) (S (NP (PRP$ her) (NNS looks)) (VP (VBP are) (ADJP (JJ fair)))))))) (, ,) (NP (PRP she)) (VP (MD ought) (S (PP (IN without) (NP (NN doubt))) (VP (TO to) (VP (VB be) (NP (NP (NN Queen)) (PP (IN of) (NP (DT the) (NNP Birds)))))))) (. .) ('' '')))
+(S (S (NP (DT The) (NNP Crow)) (VP (VBD was) (ADVP (RB hugely)) (VP (VBN flattered) (PP (IN by) (NP (DT this)))))) (, ,) (CC and) (S (ADVP (RB just)) (S (VP (TO to) (VP (VB show) (NP (DT the) (NNP Fox)) (SBAR (IN that) (S (NP (PRP she)) (VP (MD could) (VP (VB sing) (NP (PRP she))))))))) (VP (VBD gave) (NP (DT a) (JJ loud) (NN caw)))) (. .)))
+(S (S (NP (NN Down)) (VP (VBD came) (NP (NP (DT the) (NN cheese)) (, ,) (PP (IN of) (NP (NN course)))))) (, ,) (CC and) (S (NP (NP (DT the) (NNP Fox)) (, ,) (VP (VBG snatching) (NP (PRP it)) (PRT (RP up))) (, ,)) (VP (VBD said) (, ,) (`` ``) (S (NP (PRP You)) (VP (VBP have) (NP (NP (NP (DT a) (NN voice)) (, ,) (NP (NN madam)) (, ,)) (SBAR (S (NP (PRP I)) (VP (VBP see) (: :) (SBAR (WHNP (WP what)) (S (NP (PRP you)) (VP (VBP want) (SBAR (S (VP (VBZ is) (NP (NNS wits)))))))))))))))) (. .) ('' '')))
+","A Crow was sitting on a branch of a tree with a piece of cheese in her beak when a Fox observed her and set his wits to work to discover some way of getting the cheese. 
+Coming and standing under the tree he looked up and said, ""What a noble bird I see above me! Her beauty is without equal, the hue of her plumage exquisite. If only her voice is as sweet as her looks are fair, she ought without doubt to be Queen of the Birds."" 
+The Crow was hugely flattered by this, and just to show the Fox that she could sing she gave a loud caw. Down came the cheese, of course, and the Fox, snatching it up, said, ""You have a voice, madam, I see: what you want is wits."""
+,,,mc500.train.0,"1	Alyssa	Alyssa	_	NNP	_	2	nsubj	_	_
+2	got	get	_	VBD	_	0	root	_	_
+3	to	to	_	TO	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	beach	beach	_	NN	_	2	nmod	_	_
+6	after	after	_	IN	_	9	case	_	_
+7	a	a	_	DT	_	9	det	_	_
+8	long	long	_	JJ	_	9	amod	_	_
+9	trip	trip	_	NN	_	2	nmod	_	_
+10	.	.	_	.	_	2	punct	_	_
+
+1	She	she	_	PRP	_	4	nsubj	_	_
+2	's	be	_	VBZ	_	4	cop	_	_
+3	from	from	_	IN	_	4	case	_	_
+4	Charlotte	Charlotte	_	NNP	_	0	root	_	_
+5	.	.	_	.	_	4	punct	_	_
+
+1	She	she	_	PRP	_	2	nsubj	_	_
+2	traveled	travel	_	VBD	_	0	root	_	_
+3	from	from	_	IN	_	4	case	_	_
+4	Atlanta	Atlanta	_	NNP	_	2	nmod	_	_
+5	.	.	_	.	_	2	punct	_	_
+
+1	She	she	_	PRP	_	5	nsubj	_	_
+2	's	be	_	VBZ	_	5	cop	_	_
+3	now	now	_	RB	_	5	advmod	_	_
+4	in	in	_	IN	_	5	case	_	_
+5	Miami	Miami	_	NNP	_	0	root	_	_
+6	.	.	_	.	_	5	punct	_	_
+
+1	She	she	_	PRP	_	2	nsubj	_	_
+2	went	go	_	VBD	_	0	root	_	_
+3	to	to	_	TO	_	4	case	_	_
+4	Miami	Miami	_	NNP	_	2	nmod	_	_
+5	to	to	_	TO	_	6	mark	_	_
+6	visit	visit	_	VB	_	2	xcomp	_	_
+7	some	some	_	DT	_	8	det	_	_
+8	friends	friend	_	NNS	_	6	dobj	_	_
+9	.	.	_	.	_	2	punct	_	_
+
+1	But	but	_	CC	_	3	cc	_	_
+2	she	she	_	PRP	_	3	nsubj	_	_
+3	wanted	want	_	VBD	_	0	root	_	_
+4	some	some	_	DT	_	5	det	_	_
+5	time	time	_	NN	_	3	dobj	_	_
+6	to	to	_	TO	_	7	case	_	_
+7	herself	herself	_	PRP	_	3	nmod	_	_
+8	at	at	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	beach	beach	_	NN	_	3	nmod	_	_
+11	,	,	_	,	_	3	punct	_	_
+12	so	so	_	IN	_	14	mark	_	_
+13	she	she	_	PRP	_	14	nsubj	_	_
+14	went	go	_	VBD	_	3	advcl	_	_
+15	there	there	_	EX	_	14	advmod	_	_
+16	first	first	_	RB	_	15	advmod	_	_
+17	.	.	_	.	_	3	punct	_	_
+
+1	After	after	_	IN	_	2	mark	_	_
+2	going	go	_	VBG	_	9	advcl	_	_
+3	swimming	swimming	_	NN	_	2	dobj	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	laying	lay	_	VBG	_	2	conj	_	_
+6	out	out	_	RP	_	5	compound:prt	_	_
+7	,	,	_	,	_	9	punct	_	_
+8	she	she	_	PRP	_	9	nsubj	_	_
+9	went	go	_	VBD	_	0	root	_	_
+10	to	to	_	TO	_	15	case	_	_
+11	her	she	_	PRP$	_	13	nmod:poss	_	_
+12	friend	friend	_	NN	_	13	compound	_	_
+13	Ellen	Ellen	_	NNP	_	15	nmod:poss	_	_
+14	's	's	_	POS	_	13	case	_	_
+15	house	house	_	NN	_	9	nmod	_	_
+16	.	.	_	.	_	9	punct	_	_
+
+1	Ellen	Ellen	_	NNP	_	2	nsubj	_	_
+2	greeted	greet	_	VBD	_	0	root	_	_
+3	Alyssa	Alyssa	_	NNP	_	2	dobj	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	they	they	_	PRP	_	7	nsubj	_	_
+6	both	both	_	DT	_	5	det	_	_
+7	had	have	_	VBD	_	2	conj	_	_
+8	some	some	_	DT	_	9	det	_	_
+9	lemonade	lemonade	_	NN	_	7	dobj	_	_
+10	to	to	_	TO	_	11	mark	_	_
+11	drink	drink	_	VB	_	9	acl	_	_
+12	.	.	_	.	_	2	punct	_	_
+
+1	Alyssa	Alyssa	_	NNP	_	2	nsubj	_	_
+2	called	call	_	VBD	_	0	root	_	_
+3	her	she	_	PRP$	_	4	nmod:poss	_	_
+4	friends	friend	_	NNS	_	5	nsubj	_	_
+5	Kristin	Kristin	_	NNP	_	2	xcomp	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	Rachel	Rachel	_	NNP	_	5	conj	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	meet	meet	_	VB	_	5	acl	_	_
+10	at	at	_	IN	_	13	case	_	_
+11	Ellen	Ellen	_	NNP	_	13	nmod:poss	_	_
+12	's	's	_	POS	_	11	case	_	_
+13	house	house	_	NN	_	9	nmod	_	_
+14	.	.	_	.	_	2	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	girls	girl	_	NNS	_	3	nsubj	_	_
+3	traded	trade	_	VBD	_	0	root	_	_
+4	stories	story	_	NNS	_	3	dobj	_	_
+5	and	and	_	CC	_	3	cc	_	_
+6	caught	catch	_	VBD	_	3	conj	_	_
+7	up	up	_	RP	_	6	compound:prt	_	_
+8	on	on	_	IN	_	10	case	_	_
+9	their	they	_	PRP$	_	10	nmod:poss	_	_
+10	lives	life	_	NNS	_	6	nmod	_	_
+11	.	.	_	.	_	3	punct	_	_
+
+1	It	it	_	PRP	_	5	nsubj	_	_
+2	was	be	_	VBD	_	5	cop	_	_
+3	a	a	_	DT	_	5	det	_	_
+4	happy	happy	_	JJ	_	5	amod	_	_
+5	time	time	_	NN	_	0	root	_	_
+6	for	for	_	IN	_	7	case	_	_
+7	everyone	everyone	_	NN	_	5	nmod	_	_
+8	.	.	_	.	_	5	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	girls	girl	_	NNS	_	3	nsubj	_	_
+3	went	go	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	case	_	_
+5	a	a	_	DT	_	6	det	_	_
+6	restaurant	restaurant	_	NN	_	3	nmod	_	_
+7	for	for	_	IN	_	8	case	_	_
+8	dinner	dinner	_	NN	_	3	nmod	_	_
+9	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	restaurant	restaurant	_	NN	_	3	nsubj	_	_
+3	had	have	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	special	special	_	JJ	_	3	dobj	_	_
+6	on	on	_	IN	_	7	case	_	_
+7	catfish	catfish	_	NN	_	3	nmod	_	_
+8	.	.	_	.	_	3	punct	_	_
+
+1	Alyssa	Alyssa	_	NNP	_	2	nsubj	_	_
+2	enjoyed	enjoy	_	VBD	_	0	root	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	restaurant	restaurant	_	NN	_	6	nmod:poss	_	_
+5	's	's	_	POS	_	4	case	_	_
+6	special	special	_	JJ	_	2	dobj	_	_
+7	.	.	_	.	_	2	punct	_	_
+
+1	Ellen	Ellen	_	NNP	_	2	nsubj	_	_
+2	ordered	order	_	VBD	_	0	root	_	_
+3	a	a	_	DT	_	4	det	_	_
+4	salad	salad	_	NN	_	2	dobj	_	_
+5	.	.	_	.	_	2	punct	_	_
+
+1	Kristin	Kristin	_	NNP	_	2	nsubj	_	_
+2	had	have	_	VBD	_	0	root	_	_
+3	soup	soup	_	NN	_	2	dobj	_	_
+4	.	.	_	.	_	2	punct	_	_
+
+1	Rachel	Rachel	_	NNP	_	2	nsubj	_	_
+2	had	have	_	VBD	_	0	root	_	_
+3	a	a	_	DT	_	4	det	_	_
+4	steak	steak	_	NN	_	2	dobj	_	_
+5	.	.	_	.	_	2	punct	_	_
+
+1	After	after	_	IN	_	2	mark	_	_
+2	eating	eat	_	VBG	_	6	advcl	_	_
+3	,	,	_	,	_	6	punct	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	ladies	lady	_	NNS	_	6	nsubj	_	_
+6	went	go	_	VBD	_	0	root	_	_
+7	back	back	_	RB	_	6	advmod	_	_
+8	to	to	_	TO	_	11	case	_	_
+9	Ellen	Ellen	_	NNP	_	11	nmod:poss	_	_
+10	's	's	_	POS	_	9	case	_	_
+11	house	house	_	NN	_	6	nmod	_	_
+12	to	to	_	TO	_	13	mark	_	_
+13	have	have	_	VB	_	6	xcomp	_	_
+14	fun	fun	_	NN	_	13	dobj	_	_
+15	.	.	_	.	_	6	punct	_	_
+
+1	They	they	_	PRP	_	2	nsubj	_	_
+2	had	have	_	VBD	_	0	root	_	_
+3	lots	lot	_	NNS	_	2	dobj	_	_
+4	of	of	_	IN	_	5	case	_	_
+5	fun	fun	_	NN	_	3	nmod	_	_
+6	.	.	_	.	_	2	punct	_	_
+
+1	They	they	_	PRP	_	2	nsubj	_	_
+2	stayed	stay	_	VBD	_	0	root	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	night	night	_	NN	_	2	nmod:tmod	_	_
+5	because	because	_	IN	_	8	mark	_	_
+6	they	they	_	PRP	_	8	nsubjpass	_	_
+7	were	be	_	VBD	_	8	auxpass	_	_
+8	tired	tire	_	VBN	_	2	advcl	_	_
+9	.	.	_	.	_	2	punct	_	_
+
+1	Alyssa	Alyssa	_	NNP	_	3	nsubj	_	_
+2	was	be	_	VBD	_	3	cop	_	_
+3	happy	happy	_	JJ	_	0	root	_	_
+4	to	to	_	TO	_	5	mark	_	_
+5	spend	spend	_	VB	_	3	xcomp	_	_
+6	time	time	_	NN	_	5	dobj	_	_
+7	with	with	_	IN	_	9	case	_	_
+8	her	she	_	PRP$	_	9	nmod:poss	_	_
+9	friends	friend	_	NNS	_	5	nmod	_	_
+10	again	again	_	RB	_	5	advmod	_	_
+11	.	.	_	.	_	3	punct	_	_
+
+","(S (NP (NNP Alyssa)) (VP (VBD got) (PP (TO to) (NP (DT the) (NN beach))) (PP (IN after) (NP (DT a) (JJ long) (NN trip)))) (. .)))
+(S (NP (PRP She)) (VP (VBZ 's) (PP (IN from) (NP (NNP Charlotte)))) (. .)))
+(S (NP (PRP She)) (VP (VBD traveled) (PP (IN from) (NP (NNP Atlanta)))) (. .)))
+(S (NP (PRP She)) (VP (VBZ 's) (ADVP (RB now)) (PP (IN in) (NP (NNP Miami)))) (. .)))
+(S (NP (PRP She)) (VP (VBD went) (PP (TO to) (NP (NNP Miami))) (S (VP (TO to) (VP (VB visit) (NP (DT some) (NNS friends)))))) (. .)))
+(S (CC But) (S (NP (PRP she)) (VP (VBD wanted) (NP (DT some) (NN time)) (PP (TO to) (NP (PRP herself))) (PP (IN at) (NP (DT the) (NN beach))))) (, ,) (IN so) (S (NP (PRP she)) (VP (VBD went) (S (NP (EX there)) (ADJP (RB first))))) (. .)))
+(S (PP (IN After) (S (VP (VP (VBG going) (NP (NN swimming))) (CC and) (VP (VBG laying) (PRT (RP out)))))) (, ,) (NP (PRP she)) (VP (VBD went) (PP (TO to) (NP (NP (PRP$ her) (NN friend)) (NP (NP (NNP Ellen) (POS 's)) (NN house))))) (. .)))
+(S (NP (NNP Ellen)) (VP (VBD greeted) (SBAR (S (NP (NNP Alyssa) (CC and) (PRP they)) (DT both) (VP (VBD had) (NP (DT some) (NN lemonade) (S (VP (TO to) (VP (VB drink))))))))) (. .)))
+(S (NP (NNP Alyssa)) (VP (VBD called) (NP (PRP$ her) (NNS friends)) (S (NP (NNP Kristin) (CC and) (NNP Rachel)) (VP (TO to) (VP (VB meet) (PP (IN at) (NP (NP (NNP Ellen) (POS 's)) (NN house))))))) (. .)))
+(S (NP (DT The) (NNS girls)) (VP (VP (VBD traded) (NP (NNS stories))) (CC and) (VP (VBD caught) (PRT (RP up)) (PP (IN on) (NP (PRP$ their) (NNS lives))))) (. .)))
+(S (NP (PRP It)) (VP (VBD was) (NP (NP (DT a) (JJ happy) (NN time)) (PP (IN for) (NP (NN everyone))))) (. .)))
+(S (NP (DT The) (NNS girls)) (VP (VBD went) (PP (TO to) (NP (DT a) (NN restaurant))) (PP (IN for) (NP (NN dinner)))) (. .)))
+(S (NP (DT The) (NN restaurant)) (VP (VBD had) (NP (NP (DT a) (JJ special)) (PP (IN on) (NP (NN catfish))))) (. .)))
+(S (NP (NNP Alyssa)) (VP (VBD enjoyed) (NP (NP (DT the) (NN restaurant) (POS 's)) (JJ special))) (. .)))
+(S (NP (NNP Ellen)) (VP (VBD ordered) (NP (DT a) (NN salad))) (. .)))
+(S (NP (NNP Kristin)) (VP (VBD had) (NP (NN soup))) (. .)))
+(S (NP (NNP Rachel)) (VP (VBD had) (NP (DT a) (NN steak))) (. .)))
+(S (PP (IN After) (S (VP (VBG eating)))) (, ,) (NP (DT the) (NNS ladies)) (VP (VBD went) (ADVP (RB back)) (PP (TO to) (NP (NP (NNP Ellen) (POS 's)) (NN house) (S (VP (TO to) (VP (VB have) (NP (NN fun)))))))) (. .)))
+(S (NP (PRP They)) (VP (VBD had) (NP (NP (NNS lots)) (PP (IN of) (NP (NN fun))))) (. .)))
+(S (NP (PRP They)) (VP (VBD stayed) (NP-TMP (DT the) (NN night)) (SBAR (IN because) (S (NP (PRP they)) (VP (VBD were) (ADJP (VBN tired)))))) (. .)))
+(S (NP (NNP Alyssa)) (VP (VBD was) (ADJP (JJ happy) (S (VP (TO to) (VP (VB spend) (NP (NN time)) (PP (IN with) (NP (PRP$ her) (NNS friends))) (ADVP (RB again))))))) (. .)))
+","Alyssa got to the beach after a long trip. She's from Charlotte. She traveled from Atlanta. She's now in Miami. She went to Miami to visit some friends. But she wanted some time to herself at the beach, so she went there first. After going swimming and laying out, she went to her friend Ellen's house. Ellen greeted Alyssa and they both had some lemonade to drink. Alyssa called her friends Kristin and Rachel to meet at Ellen's house. The girls traded stories and caught up on their lives. It was a happy time for everyone. The girls went to a restaurant for dinner. The restaurant had a special on catfish. Alyssa enjoyed the restaurant's special. Ellen ordered a salad. Kristin had soup. Rachel had a steak. After eating, the ladies went back to Ellen's house to have fun. They had lots of fun. They stayed the night because they were tired. Alyssa was happy to spend time with her friends again.
+"
+"There once was a fat bull.  The bull was grazing in a meadow.  
+A lion watched the bull and salivated because the lion wanted to eat the bull.  
+The lion didn't attack the bull because the lion feared sharp every horn of the bull.  
+The lion began to be hungry and decided to attempt to kill the bull.  
+The lion planned to trick the bull because the lion wasn't able to fight the bull.  
+The lion walked toward the bull and began to feign that the lion was friendly.  
+The lion said to the bull that the lion admired the body of the bull, admired the head of the bull, he admired every shoulder of the bull and admired every thigh of the bull.  
+The lion advised the bull to remove every horn of the bull because every horn of the bull was ugly.  
+The lion succeeded in persuading the bull to remove every horn of the bull.  
+The lion ate the bull, and the bull began to be defenseless.  
+","1	There	there	_	EX	_	6	expl	_	_
+2	once	once	_	RB	_	6	advmod	_	_
+3	was	be	_	VBD	_	6	cop	_	_
+4	a	a	_	DT	_	6	det	_	_
+5	fat	fat	_	JJ	_	6	amod	_	_
+6	bull	bull	_	NN	_	0	root	_	_
+7	.	.	_	.	_	6	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	bull	bull	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	cop	_	_
+4	grazing	grazing	_	NN	_	0	root	_	_
+5	in	in	_	IN	_	7	case	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	meadow	meadow	_	NN	_	4	nmod	_	_
+8	.	.	_	.	_	4	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	watched	watch	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	bull	bull	_	NN	_	3	dobj	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	salivated	salivate	_	VBD	_	3	conj	_	_
+8	because	because	_	IN	_	11	mark	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	lion	lion	_	NN	_	11	nsubj	_	_
+11	wanted	want	_	VBD	_	7	advcl	_	_
+12	to	to	_	TO	_	13	mark	_	_
+13	eat	eat	_	VB	_	11	xcomp	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	bull	bull	_	NN	_	13	dobj	_	_
+16	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	5	nsubj	_	_
+3	did	do	_	VBD	_	5	aux	_	_
+4	n't	not	_	RB	_	5	neg	_	_
+5	attack	attack	_	VB	_	0	root	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	bull	bull	_	NN	_	5	dobj	_	_
+8	because	because	_	IN	_	11	mark	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	lion	lion	_	NN	_	11	nsubj	_	_
+11	feared	fear	_	VBD	_	5	advcl	_	_
+12	sharp	sharp	_	JJ	_	14	amod	_	_
+13	every	every	_	DT	_	14	det	_	_
+14	horn	horn	_	NN	_	11	dobj	_	_
+15	of	of	_	IN	_	17	case	_	_
+16	the	the	_	DT	_	17	det	_	_
+17	bull	bull	_	NN	_	14	nmod	_	_
+18	.	.	_	.	_	5	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	cop	_	_
+6	hungry	hungry	_	JJ	_	3	xcomp	_	_
+7	and	and	_	CC	_	3	cc	_	_
+8	decided	decide	_	VBD	_	3	conj	_	_
+9	to	to	_	TO	_	10	mark	_	_
+10	attempt	attempt	_	VB	_	8	xcomp	_	_
+11	to	to	_	TO	_	12	mark	_	_
+12	kill	kill	_	VB	_	10	xcomp	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	bull	bull	_	NN	_	12	dobj	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	planned	plan	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	5	mark	_	_
+5	trick	trick	_	VB	_	3	xcomp	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	bull	bull	_	NN	_	5	dobj	_	_
+8	because	because	_	IN	_	13	mark	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	lion	lion	_	NN	_	13	nsubj	_	_
+11	was	be	_	VBD	_	13	cop	_	_
+12	n't	not	_	RB	_	13	neg	_	_
+13	able	able	_	JJ	_	3	advcl	_	_
+14	to	to	_	TO	_	15	mark	_	_
+15	fight	fight	_	VB	_	13	xcomp	_	_
+16	the	the	_	DT	_	17	det	_	_
+17	bull	bull	_	NN	_	15	dobj	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	walked	walk	_	VBD	_	0	root	_	_
+4	toward	toward	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	bull	bull	_	NN	_	3	nmod	_	_
+7	and	and	_	CC	_	3	cc	_	_
+8	began	begin	_	VBD	_	3	conj	_	_
+9	to	to	_	TO	_	10	mark	_	_
+10	feign	feign	_	VB	_	8	xcomp	_	_
+11	that	that	_	IN	_	15	mark	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	lion	lion	_	NN	_	15	nsubj	_	_
+14	was	be	_	VBD	_	15	cop	_	_
+15	friendly	friendly	_	JJ	_	10	ccomp	_	_
+16	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	bull	bull	_	NN	_	3	nmod	_	_
+7	that	that	_	IN	_	10	mark	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	lion	lion	_	NN	_	10	nsubj	_	_
+10	admired	admire	_	VBD	_	3	ccomp	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	body	body	_	NN	_	10	dobj	_	_
+13	of	of	_	IN	_	15	case	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	bull	bull	_	NN	_	12	nmod	_	_
+16	,	,	_	,	_	10	punct	_	_
+17	admired	admire	_	VBD	_	10	conj	_	_
+18	the	the	_	DT	_	19	det	_	_
+19	head	head	_	NN	_	17	dobj	_	_
+20	of	of	_	IN	_	22	case	_	_
+21	the	the	_	DT	_	22	det	_	_
+22	bull	bull	_	NN	_	19	nmod	_	_
+23	,	,	_	,	_	10	punct	_	_
+24	he	he	_	PRP	_	25	nsubj	_	_
+25	admired	admire	_	VBD	_	10	conj	_	_
+26	every	every	_	DT	_	27	det	_	_
+27	shoulder	shoulder	_	NN	_	25	dobj	_	_
+28	of	of	_	IN	_	30	case	_	_
+29	the	the	_	DT	_	30	det	_	_
+30	bull	bull	_	NN	_	27	nmod	_	_
+31	and	and	_	CC	_	10	cc	_	_
+32	admired	admire	_	VBD	_	10	conj	_	_
+33	every	every	_	DT	_	34	det	_	_
+34	thigh	thigh	_	NN	_	32	dobj	_	_
+35	of	of	_	IN	_	37	case	_	_
+36	the	the	_	DT	_	37	det	_	_
+37	bull	bull	_	NN	_	34	nmod	_	_
+38	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	advised	advise	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	bull	bull	_	NN	_	3	dobj	_	_
+6	to	to	_	TO	_	7	mark	_	_
+7	remove	remove	_	VB	_	3	xcomp	_	_
+8	every	every	_	DT	_	9	det	_	_
+9	horn	horn	_	NN	_	7	dobj	_	_
+10	of	of	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	bull	bull	_	NN	_	9	nmod	_	_
+13	because	because	_	IN	_	20	mark	_	_
+14	every	every	_	DT	_	15	det	_	_
+15	horn	horn	_	NN	_	20	nsubj	_	_
+16	of	of	_	IN	_	18	case	_	_
+17	the	the	_	DT	_	18	det	_	_
+18	bull	bull	_	NN	_	15	nmod	_	_
+19	was	be	_	VBD	_	20	cop	_	_
+20	ugly	ugly	_	JJ	_	7	advcl	_	_
+21	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	succeeded	succeed	_	VBD	_	0	root	_	_
+4	in	in	_	IN	_	5	mark	_	_
+5	persuading	persuade	_	VBG	_	3	advcl	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	bull	bull	_	NN	_	5	dobj	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	remove	remove	_	VB	_	5	advcl	_	_
+10	every	every	_	DT	_	11	det	_	_
+11	horn	horn	_	NN	_	9	dobj	_	_
+12	of	of	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	bull	bull	_	NN	_	11	nmod	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	ate	eat	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	bull	bull	_	NN	_	3	dobj	_	_
+6	,	,	_	,	_	3	punct	_	_
+7	and	and	_	CC	_	3	cc	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	bull	bull	_	NN	_	10	nsubj	_	_
+10	began	begin	_	VBD	_	3	conj	_	_
+11	to	to	_	TO	_	13	mark	_	_
+12	be	be	_	VB	_	13	cop	_	_
+13	defenseless	defenseless	_	JJ	_	10	xcomp	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+","(S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (DT a) (JJ fat) (NN bull))) (. .)))
+(S (NP (DT The) (NN bull)) (VP (VBD was) (NP (NP (NN grazing)) (PP (IN in) (NP (DT a) (NN meadow))))) (. .)))
+(S (NP (DT A) (NN lion)) (VP (VP (VBD watched) (NP (DT the) (NN bull))) (CC and) (VP (VBD salivated) (SBAR (IN because) (S (NP (DT the) (NN lion)) (VP (VBD wanted) (S (VP (TO to) (VP (VB eat) (NP (DT the) (NN bull)))))))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VBD did) (RB n't) (VP (VB attack) (NP (DT the) (NN bull)) (SBAR (IN because) (S (NP (DT the) (NN lion)) (VP (VBD feared) (NP (NP (JJ sharp) (DT every) (NN horn)) (PP (IN of) (NP (DT the) (NN bull))))))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ hungry)))))) (CC and) (VP (VBD decided) (S (VP (TO to) (VP (VB attempt) (S (VP (TO to) (VP (VB kill) (NP (DT the) (NN bull)))))))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VBD planned) (S (VP (TO to) (VP (VB trick) (NP (DT the) (NN bull)) (SBAR (IN because) (S (NP (DT the) (NN lion)) (VP (VBD was) (RB n't) (ADJP (JJ able) (S (VP (TO to) (VP (VB fight) (NP (DT the) (NN bull))))))))))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VP (VBD walked) (PP (IN toward) (NP (DT the) (NN bull)))) (CC and) (VP (VBD began) (S (VP (TO to) (VP (VB feign) (SBAR (IN that) (S (NP (DT the) (NN lion)) (VP (VBD was) (ADJP (JJ friendly)))))))))) (. .)))
+(S (S (NP (DT The) (NN lion)) (VP (VBD said) (PP (TO to) (NP (DT the) (NN bull))) (SBAR (IN that) (S (NP (DT the) (NN lion)) (VP (VBD admired) (SBAR (S (NP (NP (DT the) (NN body)) (PP (IN of) (NP (DT the) (NN bull)))) (, ,) (VP (VBD admired) (NP (NP (DT the) (NN head)) (PP (IN of) (NP (DT the) (NN bull)))))))))))) (, ,) (NP (PRP he)) (VP (VP (VBD admired) (NP (NP (DT every) (NN shoulder)) (PP (IN of) (NP (DT the) (NN bull))))) (CC and) (VP (VBD admired) (NP (NP (DT every) (NN thigh)) (PP (IN of) (NP (DT the) (NN bull)))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VBD advised) (NP (DT the) (NN bull) (S (VP (TO to) (VP (VB remove) (NP (NP (DT every) (NN horn)) (PP (IN of) (NP (DT the) (NN bull)))) (SBAR (IN because) (S (NP (NP (DT every) (NN horn)) (PP (IN of) (NP (DT the) (NN bull)))) (VP (VBD was) (ADJP (JJ ugly)))))))))) (. .)))
+(S (NP (DT The) (NN lion)) (VP (VBD succeeded) (PP (IN in) (S (VP (VBG persuading) (NP (DT the) (NN bull) (S (VP (TO to) (VP (VB remove) (NP (NP (DT every) (NN horn)) (PP (IN of) (NP (DT the) (NN bull)))))))))))) (. .)))
+(S (S (NP (DT The) (NN lion)) (VP (VBD ate) (NP (DT the) (NN bull)))) (, ,) (CC and) (S (NP (DT the) (NN bull)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ defenseless))))))) (. .)))
+",fables-02,"1	A	a	_	DT	_	2	det	_	_
+2	Lion	Lion	_	NNP	_	3	nsubj	_	_
+3	watched	watch	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	7	det	_	_
+5	fat	fat	_	JJ	_	7	amod	_	_
+6	Bull	bull	_	NN	_	7	compound	_	_
+7	feeding	feeding	_	NN	_	3	dobj	_	_
+8	in	in	_	IN	_	10	case	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	meadow	meadow	_	NN	_	3	nmod	_	_
+11	,	,	_	,	_	3	punct	_	_
+12	and	and	_	CC	_	3	cc	_	_
+13	his	he	_	PRP$	_	14	nmod:poss	_	_
+14	mouth	mouth	_	NN	_	15	nsubj	_	_
+15	watered	water	_	VBD	_	3	conj	_	_
+16	when	when	_	WRB	_	18	advmod	_	_
+17	he	he	_	PRP	_	18	nsubj	_	_
+18	thought	think	_	VBD	_	15	advcl	_	_
+19	of	of	_	IN	_	22	case	_	_
+20	the	the	_	DT	_	22	det	_	_
+21	royal	royal	_	JJ	_	22	amod	_	_
+22	feast	feast	_	NN	_	18	nmod	_	_
+23	he	he	_	PRP	_	25	nsubj	_	_
+24	would	would	_	MD	_	25	aux	_	_
+25	make	make	_	VB	_	22	acl:relcl	_	_
+26	,	,	_	,	_	3	punct	_	_
+27	but	but	_	CC	_	3	cc	_	_
+28	he	he	_	PRP	_	31	nsubj	_	_
+29	did	do	_	VBD	_	31	aux	_	_
+30	not	not	_	RB	_	31	neg	_	_
+31	dare	dare	_	VB	_	3	conj	_	_
+32	to	to	_	TO	_	33	mark	_	_
+33	attack	attack	_	VB	_	31	xcomp	_	_
+34	him	he	_	PRP	_	33	dobj	_	_
+35	,	,	_	,	_	31	punct	_	_
+36	for	for	_	IN	_	39	mark	_	_
+37	he	he	_	PRP	_	39	nsubj	_	_
+38	was	be	_	VBD	_	39	cop	_	_
+39	afraid	afraid	_	JJ	_	31	advcl	_	_
+40	of	of	_	IN	_	43	case	_	_
+41	his	he	_	PRP$	_	43	nmod:poss	_	_
+42	sharp	sharp	_	JJ	_	43	amod	_	_
+43	horns	horn	_	NNS	_	39	nmod	_	_
+44	.	.	_	.	_	3	punct	_	_
+
+1	Hunger	hunger	_	NN	_	6	nsubj	_	_
+2	,	,	_	,	_	6	punct	_	_
+3	however	however	_	RB	_	6	advmod	_	_
+4	,	,	_	,	_	6	punct	_	_
+5	presently	presently	_	RB	_	6	advmod	_	_
+6	compelled	compel	_	VBN	_	0	root	_	_
+7	him	he	_	PRP	_	6	dobj	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	do	do	_	VB	_	6	xcomp	_	_
+10	something	something	_	NN	_	9	dobj	_	_
+11	:	:	_	:	_	6	punct	_	_
+12	and	and	_	CC	_	6	cc	_	_
+13	as	as	_	IN	_	20	mark	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	use	use	_	NN	_	20	nsubj	_	_
+16	of	of	_	IN	_	17	case	_	_
+17	force	force	_	NN	_	15	nmod	_	_
+18	did	do	_	VBD	_	20	aux	_	_
+19	not	not	_	RB	_	20	neg	_	_
+20	promise	promise	_	NN	_	24	advcl	_	_
+21	success	success	_	NN	_	20	dobj	_	_
+22	,	,	_	,	_	24	punct	_	_
+23	he	he	_	PRP	_	24	nsubj	_	_
+24	determined	determine	_	VBD	_	6	conj	_	_
+25	to	to	_	TO	_	26	mark	_	_
+26	resort	resort	_	VB	_	24	xcomp	_	_
+27	to	to	_	TO	_	28	case	_	_
+28	artifice	artifice	_	NN	_	26	nmod	_	_
+29	.	.	_	.	_	6	punct	_	_
+
+1	Going	go	_	VBG	_	11	advcl	_	_
+2	up	up	_	RP	_	1	compound:prt	_	_
+3	to	to	_	TO	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	Bull	Bull	_	NNP	_	1	nmod	_	_
+6	in	in	_	IN	_	8	case	_	_
+7	friendly	friendly	_	JJ	_	8	amod	_	_
+8	fashion	fashion	_	NN	_	1	nmod	_	_
+9	,	,	_	,	_	11	punct	_	_
+10	he	he	_	PRP	_	11	nsubj	_	_
+11	said	say	_	VBD	_	0	root	_	_
+12	to	to	_	TO	_	13	case	_	_
+13	him	he	_	PRP	_	11	nmod	_	_
+14	,	,	_	,	_	11	punct	_	_
+15	``	``	_	``	_	11	punct	_	_
+16	I	I	_	PRP	_	19	nsubj	_	_
+17	can	can	_	MD	_	19	aux	_	_
+18	not	not	_	RB	_	19	neg	_	_
+19	help	help	_	VB	_	11	ccomp	_	_
+20	saying	say	_	VBG	_	19	xcomp	_	_
+21	how	how	_	WRB	_	22	advmod	_	_
+22	much	much	_	JJ	_	24	advmod	_	_
+23	I	I	_	PRP	_	24	nsubj	_	_
+24	admire	admire	_	VBP	_	20	ccomp	_	_
+25	your	you	_	PRP$	_	27	nmod:poss	_	_
+26	magnificent	magnificent	_	JJ	_	27	amod	_	_
+27	figure	figure	_	NN	_	24	dobj	_	_
+28	.	.	_	.	_	11	punct	_	_
+
+1	What	what	_	WP	_	4	det	_	_
+2	a	a	_	DT	_	4	det	_	_
+3	fine	fine	_	JJ	_	4	amod	_	_
+4	head	head	_	NN	_	0	root	_	_
+5	!	!	_	.	_	4	punct	_	_
+
+1	What	what	_	WDT	_	3	det	_	_
+2	powerful	powerful	_	JJ	_	3	amod	_	_
+3	shoulders	shoulder	_	NNS	_	0	root	_	_
+4	and	and	_	CC	_	3	cc	_	_
+5	thighs	thigh	_	NNS	_	3	conj	_	_
+6	!	!	_	.	_	3	punct	_	_
+
+1	But	but	_	CC	_	0	root	_	_
+2	,	,	_	,	_	1	punct	_	_
+3	my	my	_	PRP$	_	5	nmod:poss	_	_
+4	dear	dear	_	RB	_	5	amod	_	_
+5	friend	friend	_	NN	_	2	root	_	_
+6	,	,	_	,	_	5	punct	_	_
+7	what	what	_	WDT	_	11	nsubj	_	_
+8	in	in	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	world	world	_	NN	_	7	nmod	_	_
+11	makes	make	_	VBZ	_	5	acl:relcl	_	_
+12	you	you	_	PRP	_	13	nsubj	_	_
+13	wear	wear	_	VB	_	11	ccomp	_	_
+14	those	those	_	DT	_	16	det	_	_
+15	ugly	ugly	_	JJ	_	16	amod	_	_
+16	horns	horn	_	NNS	_	13	dobj	_	_
+17	?	?	_	.	_	5	punct	_	_
+
+1	You	you	_	PRP	_	3	nsubj	_	_
+2	must	must	_	MD	_	3	aux	_	_
+3	find	find	_	VB	_	0	root	_	_
+4	them	they	_	PRP	_	3	dobj	_	_
+5	as	as	_	IN	_	6	advmod	_	_
+6	awkward	awkward	_	JJ	_	3	advcl	_	_
+7	as	as	_	IN	_	10	mark	_	_
+8	they	they	_	PRP	_	10	nsubj	_	_
+9	are	be	_	VBP	_	10	cop	_	_
+10	unsightly	unsightly	_	JJ	_	6	dep	_	_
+11	.	.	_	.	_	3	punct	_	_
+
+1	Believe	believe	_	VB	_	6	advcl	_	_
+2	me	I	_	PRP	_	1	dobj	_	_
+3	,	,	_	,	_	6	punct	_	_
+4	you	you	_	PRP	_	6	nsubj	_	_
+5	would	would	_	MD	_	6	aux	_	_
+6	do	do	_	VB	_	0	root	_	_
+7	much	much	_	RB	_	8	advmod	_	_
+8	better	better	_	JJR	_	6	advmod	_	_
+9	without	without	_	IN	_	10	case	_	_
+10	them	they	_	PRP	_	6	nmod	_	_
+11	.	.	_	.	_	6	punct	_	_
+12	''	''	_	''	_	6	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	Bull	Bull	_	NNP	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	cop	_	_
+4	foolish	foolish	_	JJ	_	0	root	_	_
+5	enough	enough	_	JJ	_	4	advmod	_	_
+6	to	to	_	TO	_	8	mark	_	_
+7	be	be	_	VB	_	8	auxpass	_	_
+8	persuaded	persuade	_	VBN	_	4	xcomp	_	_
+9	by	by	_	IN	_	11	case	_	_
+10	this	this	_	DT	_	11	det	_	_
+11	flattery	flattery	_	NN	_	8	nmod	_	_
+12	to	to	_	TO	_	13	mark	_	_
+13	have	have	_	VB	_	8	xcomp	_	_
+14	his	he	_	PRP$	_	15	nmod:poss	_	_
+15	horns	horn	_	NNS	_	16	nsubj	_	_
+16	cut	cut	_	VBD	_	13	ccomp	_	_
+17	off	off	_	RP	_	16	compound:prt	_	_
+18	;	;	_	:	_	4	punct	_	_
+19	and	and	_	CC	_	4	cc	_	_
+20	,	,	_	,	_	4	punct	_	_
+21	having	have	_	VBG	_	23	aux	_	_
+22	now	now	_	RB	_	23	advmod	_	_
+23	lost	lose	_	VBN	_	4	conj	_	_
+24	his	he	_	PRP$	_	26	nmod:poss	_	_
+25	only	only	_	JJ	_	26	amod	_	_
+26	means	means	_	NNS	_	23	dobj	_	_
+27	of	of	_	IN	_	28	case	_	_
+28	defense	defense	_	NN	_	26	nmod	_	_
+29	,	,	_	,	_	4	punct	_	_
+30	fell	fall	_	VBD	_	4	conj	_	_
+31	an	a	_	DT	_	33	det	_	_
+32	easy	easy	_	JJ	_	33	amod	_	_
+33	prey	prey	_	NN	_	30	dobj	_	_
+34	to	to	_	TO	_	36	case	_	_
+35	the	the	_	DT	_	36	det	_	_
+36	Lion	Lion	_	NNP	_	30	nmod	_	_
+37	.	.	_	.	_	4	punct	_	_
+
+","(S (S (NP (DT A) (NNP Lion)) (VP (VBD watched) (NP (DT a) (JJ fat) (NN Bull) (NN feeding)) (PP (IN in) (NP (DT a) (NN meadow))))) (, ,) (CC and) (S (NP (PRP$ his) (NN mouth)) (VP (VBD watered) (SBAR (WHADVP (WRB when)) (S (NP (PRP he)) (VP (VBD thought) (PP (IN of) (NP (DT the) (JJ royal) (NN feast))) (SBAR (S (NP (PRP he)) (VP (MD would) (VP (VB make)))) (, ,) (CC but) (S (NP (PRP he)) (VP (VBD did) (RB not) (VP (VB dare) (S (VP (TO to) (VP (VB attack) (NP (PRP him))))))))) (, ,) (SBAR (IN for) (S (NP (PRP he)) (VP (VBD was) (ADJP (JJ afraid) (PP (IN of) (NP (PRP$ his) (JJ sharp) (NNS horns)))))))))))) (. .)))
+(S (NP (NN Hunger)) (, ,) (ADVP (RB however)) (, ,) (S (ADVP (RB presently)) (VP (VP (VBN compelled) (S (NP (PRP him)) (VP (TO to) (VP (VB do) (NP (NN something)))))) (: :) (CC and) (VP (PP (IN as) (NP (NP (DT the) (NN use)) (PP (IN of) (NP (NN force))))) (VBD did) (NP (RB not) (NN promise) (NN success))))) (, ,) (NP (PRP he)) (VP (VBD determined) (S (VP (TO to) (VP (VB resort) (PP (TO to) (NP (NN artifice))))))) (. .)))
+(S (S (VP (VBG Going) (PRT (RP up)) (PP (TO to) (NP (DT the) (NNP Bull))) (PP (IN in) (NP (JJ friendly) (NN fashion))))) (PRN (, ,) (S (NP (PRP he)) (VP (VBD said) (PP (TO to) (NP (PRP him))))) (, ,)) (`` ``) (NP (PRP I)) (VP (MD can) (RB not) (VP (VB help) (S (VP (VBG saying) (SBAR (WHADJP (WRB how) (JJ much)) (S (NP (PRP I)) (VP (VBP admire) (NP (PRP$ your) (JJ magnificent) (NN figure))))))))) (. .)))
+(NP (NP (WP What)) (NP (DT a) (JJ fine) (NN head)) (. !)))
+(FRAG (WHNP (WDT What) (NP (JJ powerful) (NNS shoulders))) (PP (CC and) (NP (NNS thighs))) (. !)))
+(S (ADVP (CC But)) (, ,) (NP (NP (PRP$ my) (ADJP (RB dear)) (NN friend)) (, ,) (SBAR (WHNP (WDT what)) (S (PP (IN in) (NP (DT the) (NN world))) (VP (VBZ makes) (NP (PRP you)))))) (VP (VB wear) (NP (DT those) (JJ ugly) (NNS horns))) (. ?)))
+(S (NP (PRP You)) (VP (MD must) (VP (VB find) (NP (PRP them)) (PP (IN as) (NP (JJ awkward))) (SBAR (IN as) (S (NP (PRP they)) (VP (VBP are) (ADJP (JJ unsightly))))))) (. .)))
+(S (S (VP (VB Believe) (NP (PRP me)))) (, ,) (NP (PRP you)) (VP (MD would) (VP (VB do) (ADJP (RB much) (JJR better)) (PP (IN without) (NP (PRP them))))) (. .) ('' '')))
+(SINV (S (NP (DT The) (NNP Bull)) (VP (VBD was) (ADJP (JJ foolish) (SBAR (S (S (ADJP (JJ enough) (S (VP (TO to) (VP (VB be) (VP (VBN persuaded) (PP (IN by) (NP (DT this) (NN flattery))) (S (VP (TO to) (VP (VB have) (S (NP (PRP$ his) (NNS horns)) (VP (VBD cut) (PRT (RP off))))))))))))) (: ;) (CC and) (, ,) (S (VP (VBG having) (ADVP (RB now)) (VP (VBN lost) (NP (NP (PRP$ his) (JJ only) (NNS means)) (PP (IN of) (NP (NN defense)))))))))))) (, ,) (VP (VBD fell)) (NP (NP (DT an) (JJ easy) (NN prey)) (PP (TO to) (NP (DT the) (NNP Lion)))) (. .)))
+","A Lion watched a fat Bull feeding in a meadow, and his mouth watered when he thought of the royal feast he would make, but he did not dare to attack him, for he was afraid of his sharp horns.
+Hunger, however, presently compelled him to do something: and as the use of force did not promise success, he determined to resort to artifice.
+Going up to the Bull in friendly fashion, he said to him, ""I cannot help saying how much I admire your magnificent figure.  What a fine head!  What powerful shoulders and thighs!  But, my dear friend, what in the world makes you wear those ugly horns?  You must find them as awkward as they are unsightly.  Believe me, you would do much better without them.""
+The Bull was foolish enough to be persuaded by this flattery to have his horns cut off; and, having now lost his only means of defense, fell an easy prey to the Lion."
+"A summit meeting named G20 summit started on eventful today.  
+G20 summit happened annually.  
+A world and many leader came and talked about it running a government.  
+A people protested because it disagreed about a view.  
+The people protested peacefully on a street.  
+The people rebelled and created riot.  
+The people burned a police car and threw a thing at a police.  
+The police alleviated the people of riot.  
+The police fired a tear gas at the people and fired a bullet at the people, and the people smashed a window.  
+","1	A	a	_	DT	_	3	det	_	_
+2	summit	summit	_	NN	_	3	compound	_	_
+3	meeting	meeting	_	NN	_	7	nsubj	_	_
+4	named	name	_	VBN	_	3	acl	_	_
+5	G20	g20	_	NN	_	6	compound	_	_
+6	summit	summit	_	NN	_	4	xcomp	_	_
+7	started	start	_	VBD	_	0	root	_	_
+8	on	on	_	IN	_	9	case	_	_
+9	eventful	eventful	_	JJ	_	7	nmod	_	_
+10	today	today	_	NN	_	7	nmod:tmod	_	_
+11	.	.	_	.	_	7	punct	_	_
+
+1	G20	g20	_	NN	_	2	compound	_	_
+2	summit	summit	_	NN	_	3	nsubj	_	_
+3	happened	happen	_	VBD	_	0	root	_	_
+4	annually	annually	_	RB	_	3	advmod	_	_
+5	.	.	_	.	_	3	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	world	world	_	NN	_	6	nsubj	_	_
+3	and	and	_	CC	_	2	cc	_	_
+4	many	many	_	JJ	_	5	amod	_	_
+5	leader	leader	_	NN	_	2	conj	_	_
+6	came	come	_	VBD	_	0	root	_	_
+7	and	and	_	CC	_	6	cc	_	_
+8	talked	talk	_	VBD	_	6	conj	_	_
+9	about	about	_	IN	_	11	mark	_	_
+10	it	it	_	PRP	_	11	nsubj	_	_
+11	running	run	_	VBG	_	8	advcl	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	government	government	_	NN	_	11	dobj	_	_
+14	.	.	_	.	_	6	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	people	people	_	NNS	_	3	nsubj	_	_
+3	protested	protest	_	VBD	_	0	root	_	_
+4	because	because	_	IN	_	6	mark	_	_
+5	it	it	_	PRP	_	6	nsubj	_	_
+6	disagreed	disagree	_	VBD	_	3	advcl	_	_
+7	about	about	_	IN	_	9	case	_	_
+8	a	a	_	DT	_	9	det	_	_
+9	view	view	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	people	people	_	NNS	_	3	nsubj	_	_
+3	protested	protest	_	VBD	_	0	root	_	_
+4	peacefully	peacefully	_	RB	_	3	advmod	_	_
+5	on	on	_	IN	_	7	case	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	street	street	_	NN	_	3	nmod	_	_
+8	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	people	people	_	NNS	_	3	nsubj	_	_
+3	rebelled	rebel	_	VBD	_	0	root	_	_
+4	and	and	_	CC	_	3	cc	_	_
+5	created	create	_	VBD	_	3	conj	_	_
+6	riot	riot	_	NN	_	5	dobj	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	people	people	_	NNS	_	3	nsubj	_	_
+3	burned	burn	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	6	det	_	_
+5	police	police	_	NN	_	6	compound	_	_
+6	car	car	_	NN	_	3	dobj	_	_
+7	and	and	_	CC	_	3	cc	_	_
+8	threw	throw	_	VBD	_	3	conj	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	thing	thing	_	NN	_	8	dobj	_	_
+11	at	at	_	IN	_	13	case	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	police	police	_	NN	_	8	nmod	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	police	police	_	NN	_	3	nsubj	_	_
+3	alleviated	alleviate	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	people	people	_	NNS	_	3	dobj	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	riot	riot	_	NN	_	5	nmod	_	_
+8	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	police	police	_	NN	_	3	nsubj	_	_
+3	fired	fire	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	6	det	_	_
+5	tear	tear	_	VB	_	6	amod	_	_
+6	gas	gas	_	NN	_	3	dobj	_	_
+7	at	at	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	people	people	_	NNS	_	3	nmod	_	_
+10	and	and	_	CC	_	3	cc	_	_
+11	fired	fire	_	VBD	_	3	conj	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	bullet	bullet	_	NN	_	11	dobj	_	_
+14	at	at	_	IN	_	16	case	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	people	people	_	NNS	_	11	nmod	_	_
+17	,	,	_	,	_	3	punct	_	_
+18	and	and	_	CC	_	3	cc	_	_
+19	the	the	_	DT	_	20	det	_	_
+20	people	people	_	NNS	_	21	nsubj	_	_
+21	smashed	smash	_	VBD	_	3	conj	_	_
+22	a	a	_	DT	_	23	det	_	_
+23	window	window	_	NN	_	21	dobj	_	_
+24	.	.	_	.	_	3	punct	_	_
+
+","(S (NP (NP (DT A) (NN summit) (NN meeting)) (VP (VBN named) (NP (NN G20) (NN summit)))) (VP (VBD started) (PP (IN on) (NP-TMP (JJ eventful) (NN today)))) (. .)))
+(S (NP (NN G20) (NN summit)) (VP (VBD happened) (ADVP (RB annually))) (. .)))
+(S (NP (NP (DT A) (NN world)) (CC and) (NP (JJ many) (NN leader))) (VP (VBD came) (CC and) (VBD talked) (PP (IN about) (S (NP (PRP it)) (VP (VBG running) (NP (DT a) (NN government)))))) (. .)))
+(S (NP (DT A) (NNS people)) (VP (VBD protested) (SBAR (IN because) (S (NP (PRP it)) (VP (VBD disagreed) (PP (IN about) (NP (DT a) (NN view))))))) (. .)))
+(S (NP (DT The) (NNS people)) (VP (VBD protested) (ADVP (RB peacefully)) (PP (IN on) (NP (DT a) (NN street)))) (. .)))
+(S (NP (DT The) (NNS people)) (VP (VP (VBD rebelled)) (CC and) (VP (VBD created) (NP (NN riot)))) (. .)))
+(S (NP (DT The) (NNS people)) (VP (VP (VBD burned) (NP (DT a) (NN police) (NN car))) (CC and) (VP (VBD threw) (NP (DT a) (NN thing)) (PP (IN at) (NP (DT a) (NN police))))) (. .)))
+(S (NP (DT The) (NN police)) (VP (VBD alleviated) (NP (NP (DT the) (NNS people)) (PP (IN of) (NP (NN riot))))) (. .)))
+(S (S (NP (DT The) (NN police)) (VP (VP (VBD fired) (S (NP (DT a)) (VP (VB tear) (NP (NN gas)) (PP (IN at) (NP (DT the) (NNS people)))))) (CC and) (VP (VBD fired) (NP (DT a) (NN bullet)) (PP (IN at) (NP (DT the) (NNS people)))))) (, ,) (CC and) (S (NP (DT the) (NNS people)) (VP (VBD smashed) (NP (DT a) (NN window)))) (. .)))
+",blogs-01,"1	Today	today	_	NN	_	7	nsubj	_	_
+2	was	be	_	VBD	_	7	cop	_	_
+3	a	a	_	DT	_	7	det	_	_
+4	very	very	_	RB	_	5	advmod	_	_
+5	eventful	eventful	_	JJ	_	7	amod	_	_
+6	work	work	_	NN	_	7	compound	_	_
+7	day	day	_	NN	_	0	root	_	_
+8	.	.	_	.	_	7	punct	_	_
+
+1	Today	today	_	NN	_	4	nsubj	_	_
+2	was	be	_	VBD	_	4	cop	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	start	start	_	NN	_	0	root	_	_
+5	of	of	_	IN	_	8	case	_	_
+6	the	the	_	DT	_	8	det	_	_
+7	G20	g20	_	NN	_	8	compound	_	_
+8	summit	summit	_	NN	_	4	nmod	_	_
+9	.	.	_	.	_	4	punct	_	_
+
+1	It	it	_	PRP	_	2	nsubj	_	_
+2	happens	happen	_	VBZ	_	0	root	_	_
+3	every	every	_	DT	_	4	det	_	_
+4	year	year	_	NN	_	2	nmod:tmod	_	_
+5	and	and	_	CC	_	2	cc	_	_
+6	it	it	_	PRP	_	7	nsubj	_	_
+7	is	be	_	VBZ	_	2	conj	_	_
+8	where	where	_	WRB	_	16	advmod	_	_
+9	20	20	_	CD	_	16	nsubj	_	_
+10	of	of	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	leaders	leader	_	NNS	_	9	nmod	_	_
+13	of	of	_	IN	_	15	case	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	world	world	_	NN	_	12	nmod	_	_
+16	come	come	_	VBN	_	7	advcl	_	_
+17	together	together	_	RB	_	16	advmod	_	_
+18	to	to	_	TO	_	19	mark	_	_
+19	talk	talk	_	VB	_	16	xcomp	_	_
+20	about	about	_	IN	_	23	mark	_	_
+21	how	how	_	WRB	_	23	advmod	_	_
+22	to	to	_	TO	_	23	mark	_	_
+23	run	run	_	VB	_	19	advcl	_	_
+24	their	they	_	PRP$	_	25	nmod:poss	_	_
+25	governments	government	_	NNS	_	23	dobj	_	_
+26	effectively	effectively	_	RB	_	23	advmod	_	_
+27	and	and	_	CC	_	23	cc	_	_
+28	what	what	_	WP	_	23	conj	_	_
+29	not	not	_	RB	_	28	neg	_	_
+30	.	.	_	.	_	2	punct	_	_
+
+1	Since	since	_	IN	_	3	mark	_	_
+2	there	there	_	EX	_	3	expl	_	_
+3	are	be	_	VBP	_	0	root	_	_
+4	so	so	_	RB	_	5	advmod	_	_
+5	many	many	_	JJ	_	6	amod	_	_
+6	leaders	leader	_	NNS	_	3	nsubj	_	_
+7	coming	come	_	VBG	_	6	acl	_	_
+8	together	together	_	RB	_	7	advmod	_	_
+9	their	they	_	PRP$	_	11	nsubj	_	_
+10	are	be	_	VBP	_	11	aux	_	_
+11	going	go	_	VBG	_	7	ccomp	_	_
+12	to	to	_	TO	_	15	mark	_	_
+13	be	be	_	VB	_	15	cop	_	_
+14	a	a	_	DT	_	15	det	_	_
+15	lot	lot	_	NN	_	11	xcomp	_	_
+16	of	of	_	IN	_	17	case	_	_
+17	people	people	_	NNS	_	15	nmod	_	_
+18	who	who	_	WP	_	19	nsubj	_	_
+19	have	have	_	VBP	_	17	acl:relcl	_	_
+20	different	different	_	JJ	_	21	amod	_	_
+21	views	view	_	NNS	_	19	dobj	_	_
+22	on	on	_	IN	_	25	mark	_	_
+23	how	how	_	WRB	_	25	advmod	_	_
+24	to	to	_	TO	_	25	mark	_	_
+25	run	run	_	VB	_	19	advcl	_	_
+26	the	the	_	DT	_	27	det	_	_
+27	government	government	_	NN	_	25	dobj	_	_
+28	they	they	_	PRP	_	29	nsubj	_	_
+29	follow	follow	_	VBP	_	15	acl:relcl	_	_
+30	so	so	_	IN	_	32	mark	_	_
+31	they	they	_	PRP	_	32	nsubj	_	_
+32	protest	protest	_	VBP	_	29	advcl	_	_
+33	.	.	_	.	_	3	punct	_	_
+
+1	There	there	_	EX	_	2	expl	_	_
+2	was	be	_	VBD	_	0	root	_	_
+3	a	a	_	DT	_	4	det	_	_
+4	protest	protest	_	NN	_	2	nsubj	_	_
+5	that	that	_	WDT	_	6	nsubj	_	_
+6	happened	happen	_	VBD	_	4	acl:relcl	_	_
+7	along	along	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	street	street	_	NN	_	6	nmod	_	_
+10	where	where	_	WRB	_	12	advmod	_	_
+11	I	I	_	PRP	_	12	nsubj	_	_
+12	work	work	_	VBP	_	9	acl:relcl	_	_
+13	and	and	_	CC	_	12	cc	_	_
+14	at	at	_	IN	_	15	case	_	_
+15	first	first	_	JJ	_	17	advcl	_	_
+16	it	it	_	PRP	_	17	nsubj	_	_
+17	looked	look	_	VBD	_	12	conj	_	_
+18	peaceful	peaceful	_	JJ	_	17	xcomp	_	_
+19	until	until	_	IN	_	24	mark	_	_
+20	a	a	_	DT	_	21	det	_	_
+21	bunch	bunch	_	NN	_	24	nsubj	_	_
+22	of	of	_	IN	_	23	case	_	_
+23	people	people	_	NNS	_	21	nmod	_	_
+24	started	start	_	VBD	_	17	advcl	_	_
+25	rebelling	rebel	_	VBG	_	24	xcomp	_	_
+26	and	and	_	CC	_	25	cc	_	_
+27	creating	create	_	VBG	_	25	conj	_	_
+28	a	a	_	DT	_	29	det	_	_
+29	riot	riot	_	NN	_	25	dobj	_	_
+30	.	.	_	.	_	2	punct	_	_
+
+1	Police	Police	_	NNP	_	2	compound	_	_
+2	cars	car	_	NNS	_	4	nsubjpass	_	_
+3	were	be	_	VBD	_	4	auxpass	_	_
+4	burned	burn	_	VBN	_	0	root	_	_
+5	and	and	_	CC	_	4	cc	_	_
+6	things	thing	_	NNS	_	8	nsubjpass	_	_
+7	were	be	_	VBD	_	8	auxpass	_	_
+8	thrown	throw	_	VBN	_	4	conj	_	_
+9	at	at	_	IN	_	10	case	_	_
+10	cops	cop	_	NNS	_	8	nmod	_	_
+11	.	.	_	.	_	4	punct	_	_
+
+1	Police	police	_	NNS	_	6	nsubj	_	_
+2	were	be	_	VBD	_	6	cop	_	_
+3	in	in	_	IN	_	6	case	_	_
+4	full	full	_	JJ	_	6	amod	_	_
+5	riot	riot	_	NN	_	6	compound	_	_
+6	gear	gear	_	NN	_	0	root	_	_
+7	to	to	_	TO	_	8	mark	_	_
+8	alleviate	alleviate	_	VB	_	6	acl	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	violence	violence	_	NN	_	8	dobj	_	_
+11	.	.	_	.	_	6	punct	_	_
+
+1	As	as	_	IN	_	3	mark	_	_
+2	things	thing	_	NNS	_	3	nsubj	_	_
+3	got	get	_	VBD	_	12	advcl	_	_
+4	worse	worse	_	JJR	_	3	xcomp	_	_
+5	tear	tear	_	VB	_	4	dep	_	_
+6	gas	gas	_	NN	_	10	compound	_	_
+7	and	and	_	CC	_	6	cc	_	_
+8	bean	bean	_	NN	_	6	conj	_	_
+9	bag	bag	_	NN	_	10	compound	_	_
+10	bullets	bullet	_	NNS	_	5	dobj	_	_
+11	were	be	_	VBD	_	12	auxpass	_	_
+12	fired	fire	_	VBN	_	0	root	_	_
+13	at	at	_	IN	_	15	case	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	rioters	rioter	_	NNS	_	12	nmod	_	_
+16	while	while	_	IN	_	18	mark	_	_
+17	they	they	_	PRP	_	18	nsubj	_	_
+18	smash	smash	_	VBP	_	12	advcl	_	_
+19	windows	window	_	NNS	_	18	dobj	_	_
+20	of	of	_	IN	_	21	case	_	_
+21	stores	store	_	NNS	_	19	nmod	_	_
+22	.	.	_	.	_	12	punct	_	_
+
+1	And	and	_	CC	_	4	cc	_	_
+2	this	this	_	DT	_	4	nsubj	_	_
+3	all	all	_	DT	_	4	dep	_	_
+4	happened	happen	_	VBD	_	0	root	_	_
+5	right	right	_	RB	_	7	advmod	_	_
+6	in	in	_	IN	_	7	case	_	_
+7	front	front	_	NN	_	4	nmod	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	my	my	_	PRP$	_	10	nmod:poss	_	_
+10	store	store	_	NN	_	7	nmod	_	_
+11	which	which	_	WDT	_	13	nsubj	_	_
+12	was	be	_	VBD	_	13	cop	_	_
+13	kind	kind	_	NN	_	10	acl:relcl	_	_
+14	of	of	_	IN	_	15	case	_	_
+15	scary	scary	_	JJ	_	13	nmod	_	_
+16	but	but	_	CC	_	13	cc	_	_
+17	it	it	_	PRP	_	19	nsubj	_	_
+18	was	be	_	VBD	_	19	cop	_	_
+19	kind	kind	_	NN	_	13	conj	_	_
+20	of	of	_	IN	_	21	case	_	_
+21	interesting	interesting	_	JJ	_	19	nmod	_	_
+22	since	since	_	IN	_	26	mark	_	_
+23	I	I	_	PRP	_	26	nsubj	_	_
+24	've	have	_	VBP	_	26	aux	_	_
+25	never	never	_	RB	_	26	neg	_	_
+26	seen	see	_	VBN	_	19	advcl	_	_
+27	a	a	_	DT	_	28	det	_	_
+28	riot	riot	_	NN	_	26	dobj	_	_
+29	before	before	_	IN	_	26	advmod	_	_
+30	.	.	_	.	_	4	punct	_	_
+
+","(S (NP (NN Today)) (VP (VBD was) (NP (DT a) (ADJP (RB very) (JJ eventful)) (NN work) (NN day))) (. .)))
+(S (NP (NN Today)) (VP (VBD was) (NP (NP (DT the) (NN start)) (PP (IN of) (NP (DT the) (NN G20) (NN summit))))) (. .)))
+(S (S (NP (PRP It)) (VP (VBZ happens) (NP (DT every) (NN year)))) (CC and) (S (NP (PRP it)) (VP (VBZ is) (SBAR (WHADVP (WRB where)) (S (NP (NP (CD 20)) (PP (IN of) (NP (NP (DT the) (NNS leaders)) (PP (IN of) (NP (DT the) (NN world)))))) (VP (VP (VBN come) (ADVP (RB together)) (S (VP (TO to) (VP (VB talk) (PP (IN about) (SBAR (WHADVP (WRB how)) (S (VP (TO to) (VP (VB run) (NP (PRP$ their) (NNS governments)) (ADVP (RB effectively))))))))))) (CC and) (VP (NP (WP what)) (ADVP (RB not)))))))) (. .)))
+(S (SBAR (IN Since) (S (NP (EX there)) (VP (VBP are) (ADVP (RB so) (NP (JJ many) (NNS leaders))) (VP (VBG coming) (ADVP (RB together)))))) (NP (PRP$ their)) (VP (VBP are) (VP (VBG going) (S (VP (TO to) (VP (VB be) (NP (NP (DT a) (NN lot)) (PP (IN of) (NP (NP (NNS people)) (SBAR (WHNP (WP who)) (S (VP (VBP have) (NP (NP (JJ different) (NNS views)) (PP (IN on) (SBAR (WHADVP (WRB how)) (S (VP (TO to) (VP (VB run) (NP (NP (DT the) (NN government)) (SBAR (S (NP (PRP they)) (VP (VBP follow) (SBAR (IN so) (S (NP (PRP they)) (VP (VBP protest))))))))))))))))))))))))) (. .)))
+(S (S (NP (EX There)) (VP (VBD was) (NP (NP (DT a) (NN protest)) (SBAR (WHNP (WDT that)) (S (VP (VBD happened) (PP (IN along) (NP (DT the) (NN street))) (SBAR (WHADVP (WRB where)) (S (NP (PRP I)) (VP (VBP work)))))))))) (CC and) (S (ADVP (IN at) (JJ first)) (NP (PRP it)) (VP (VBD looked) (ADJP (JJ peaceful)) (SBAR (IN until) (S (NP (NP (DT a) (NN bunch)) (PP (IN of) (NP (NNS people)))) (VP (VBD started) (S (VP (VBG rebelling) (CC and) (VBG creating) (NP (DT a) (NN riot))))))))) (. .)))
+(S (S (NP (NNP Police) (NNS cars)) (VP (VBD were) (VP (VBN burned)))) (CC and) (S (NP (NNS things)) (VP (VBD were) (VP (VBN thrown) (PP (IN at) (NP (NNS cops)))))) (. .)))
+(S (NP (NNS Police)) (VP (VBD were) (PP (IN in) (NP (JJ full) (NN riot) (NN gear))) (S (VP (TO to) (VP (VB alleviate) (NP (DT the) (NN violence)))))) (. .)))
+(S (SBAR (IN As) (S (NP (NNS things)) (VP (VBD got) (ADJP (JJR worse))))) (VP (VB tear) (SBAR (S (NP (NN gas) (CC and) (NN bean) (NN bag) (NNS bullets)) (VP (VBD were) (VP (VBN fired) (PP (IN at) (NP (DT the) (NNS rioters))) (SBAR (IN while) (S (NP (PRP they)) (VP (VBP smash) (NP (NP (NNS windows)) (PP (IN of) (NP (NNS stores)))))))))))) (. .)))
+(S (S (CC And) (NP (DT this)) (ADVP (DT all)) (VP (VBD happened) (ADVP (RB right)) (PP (IN in) (NP (NP (NN front)) (PP (IN of) (NP (PRP$ my) (NN store))) (SBAR (WHNP (WDT which)) (S (VP (VBD was) (ADJP (ADVP (NN kind) (IN of)) (JJ scary))))))))) (CC but) (S (NP (PRP it)) (VP (VBD was) (ADJP (ADVP (NN kind) (IN of)) (JJ interesting)) (SBAR (IN since) (S (NP (PRP I)) (VP (VBP 've) (ADVP (RB never)) (VP (VBN seen) (ADVP (NP (DT a) (NN riot)) (IN before)))))))) (. .)))
+",Today was a very eventful work day. Today was the start of the G20 summit. It happens every year and it is where 20 of the leaders of the world come together to talk about how to run their governments effectively and what not. Since there are so many leaders coming together their are going to be a lot of people who have different views on how to run the government they follow so they protest. There was a protest that happened along the street where I work and at first it looked peaceful until a bunch of people started rebelling and creating a riot. Police cars were burned and things were thrown at cops. Police were in full riot gear to alleviate the violence. As things got worse tear gas and bean bag bullets were fired at the rioters while they smash windows of stores. And this all happened right in front of my store which was kind of scary but it was kind of interesting since I've never seen a riot before.
