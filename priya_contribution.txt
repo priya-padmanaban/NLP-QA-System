@@ -1,0 +1,2 @@
+- implemented get_sentences
+- set up github and organized files
