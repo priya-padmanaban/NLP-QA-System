@@ -39,7 +39,7 @@ def prepare_story_data(df):
             "story_dep": prepare_deps(row.story_dep),
             "sch_dep": prepare_deps(row.sch_dep),
             "sch_par": prepare_pars(row.sch_par),
-            "story_par": prepare_pars(row.sch_par),
+            "story_par": prepare_pars(row.story_par),
             "sch": row.sch,
             "text": row.text,
             "sid": row.sid,

@@ -65,10 +65,6 @@ if __name__ == '__main__':
     stopwords = set(nltk.corpus.stopwords.words("english"))
 
     qbow = get_bow(get_sentences(question)[0], stopwords)
-    # get_bow = filters stopwords, returns
-    # get_sentences returns tagged question, in this case, only the first question
-    # qbow therefore is a a list of tagged words from the question without stopwords
-
     sentences = get_sentences(text)
     answer = baseline(qbow, sentences, stopwords)
     print("answer:", " ".join(t[0] for t in answer))
