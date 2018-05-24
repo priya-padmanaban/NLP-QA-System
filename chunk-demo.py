@@ -96,7 +96,7 @@ if __name__ == '__main__':
 
     # Apply the standard NLP pipeline we've seen before
     sentences = get_sentences(text)
-    
+
     # Assume we're given the keywords for now
     # What is happening
     verb = "sitting"

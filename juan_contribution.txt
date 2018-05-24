@@ -1,2 +1,4 @@
 Created pipeline for get_answer()
 coded overlapping for get_answer()
+coded chunking based on the chunking demo stub code.
+made if else cases for chunking and basic baseline operation.

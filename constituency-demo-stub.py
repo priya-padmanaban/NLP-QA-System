@@ -56,12 +56,13 @@ if __name__ == '__main__':
     story = driver.get_story(q["sid"])
 
     tree = story["sch_par"][1]
-
+    # print(tree)
     # Create our pattern
     pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
-    
+
     # # Match our pattern to the tree  
     subtree = pattern_matcher(pattern, tree)
+    print(subtree)
     # print(" ".join(subtree.leaves()))
     
     # create a new pattern to match a smaller subset of subtree

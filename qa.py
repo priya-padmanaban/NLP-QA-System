@@ -1,9 +1,128 @@
-import sys, nltk, operator
+import re, sys, nltk, operator
 from qa_engine.base import QABase
 from qa_engine.score_answers import main as score_answers
+from nltk.stem.wordnet import WordNetLemmatizer
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem.snowball import SnowballStemmer
+
+# Our simple grammar from class (and the book)
+GRAMMAR =   """
+            N: {<PRP>|<NN.*>}
+            V: {<V.*>}
+            ADJ: {<JJ.*>}
+            NP: {<DT>? <ADJ>* <N>+}
+            PP: {<IN> <NP>}
+            VP: {<TO>? <V> (<NP>|<PP>)*}
+            """
+NOUNS = ['NN', 'NNP', 'NNS']
+VERBS = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 
 
+LOC_PP = set(["in", "on", "at"])
+NP_NP = set(["a", "the", "that", "it"])
+WHY_WHY = set(["because"])
 
+
+def get_sentences(text):
+    sentences = nltk.sent_tokenize(text)
+    sentences = [nltk.word_tokenize(sent) for sent in sentences]
+    sentences = [nltk.pos_tag(sent) for sent in sentences]
+
+    return sentences
+
+
+def pp_filter(subtree):
+    return subtree.label() == "PP"
+
+def np_filter(subtree):
+    return subtree.label() == "NP"
+
+def is_location(prep):
+    return prep[0] in LOC_PP
+
+def is_np(prep):
+    return prep[0] in NP_NP
+
+
+def find_locations(tree):
+    # Starting at the root of the tree
+    # Traverse each node and get the subtree underneath it
+    # Filter out any subtrees who's label is not a PP
+    # Then check to see if the first child (it must be a preposition) is in
+    # our set of locative markers
+    # If it is then add it to our list of candidate locations
+
+    # How do we modify this to return only the NP: add [1] to subtree!
+    # How can we make this function more robust?
+    # Make sure the crow/subj is to the left
+    locations = []
+    for subtree in tree.subtrees(filter=pp_filter):
+        if is_location(subtree[0]):
+            locations.append(subtree)
+
+    return locations
+
+def find_np(tree):
+    np = []
+    for subtree in tree.subtrees(filter=np_filter):
+        if is_np(subtree[0]):
+            np.append(subtree)
+
+    return np
+
+
+def find_candidates(crow_sentences, chunker, text):
+    candidates = []
+    tokenized_question = nltk.word_tokenize(text.lower())
+
+    for sent in crow_sentences:
+        tree = chunker.parse(sent)
+        # print(tree)
+        if tokenized_question[0] == "what":
+            qType = "np_type"
+            np = find_np(tree)
+            candidates.extend(np)
+        elif tokenized_question[0] == "where":
+            qType = "loc_type"
+            locations = find_locations(tree)
+            candidates.extend(locations)
+        else:
+            locations = find_locations(tree)
+            candidates.extend(locations)
+        '''
+        if tokenized_question[0] == "who":
+            qType = "name_type"
+            name = find_np(tree)
+            candidates.extend(name)
+        if tokenized_question[0] == "why":
+            qType = "why_type"
+            why = find_np(tree)
+            candidates.extend(why)
+        '''
+    return candidates
+
+
+def find_sentences(patterns, sentences):
+    # Get the raw text of each sentence to make it easier to search using regexes
+    raw_sentences = [" ".join([token[0] for token in sent]) for sent in sentences]
+
+    result = []
+    for sent, raw_sent in zip(sentences, raw_sentences):
+        for pattern in patterns:
+            if not re.search(pattern, raw_sent):
+                matches = False
+            else:
+                matches = True
+        if matches:
+            result.append(sent)
+
+    return result
+
+#########################################################################################
+
+
+#########################################################################################
+# Baseline helper functions
 def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
@@ -37,6 +156,18 @@ def baseline(qbow, sentences, stopwords):
     best_answer = (answers[0])[1]
     return best_answer
 
+########################################################################################
+
+def get_question_type(text):
+    tokenized_question = nltk.word_tokenize(text.lower())
+    if tokenized_question[0] == "what":
+        return "np_type"
+    if tokenized_question[0] == "where":
+        return "loc_type"
+    if tokenized_question[0] == "who":
+        return "name_type"
+    if tokenized_question[0] == "why":
+        return "why_type"
 
 def get_answer(question, story):
     """
@@ -53,7 +184,7 @@ def get_answer(question, story):
         difficulty -- easy, medium, or hard
         type -- whether you need to use the 'sch' or 'story' versions
                 of the .
-        id  --  The id of the question.
+        qid  --  The id of the question.
 
 
     story is a dictionary with keys:
@@ -72,22 +203,91 @@ def get_answer(question, story):
 
     """
     ###     Your Code Goes Here         ###
+    # Our tools
+    stemmer = SnowballStemmer("english")
+    chunker = nltk.RegexpParser(GRAMMAR)
+    lmtzr = WordNetLemmatizer()
+
+    driver = QABase()
+    q = driver.get_question(question["qid"])
+    current_story = driver.get_story(q["sid"])
     text = story["text"]
-    questions = question["text"]
 
-    stopwords = set(nltk.corpus.stopwords.words("english"))
-    qbow = get_bow(get_sentences(questions)[0], stopwords)
-    # get_bow = filters stopwords, returns
-    # get_sentences returns tagged question, in this case, only the first question
-    # qbow therefore is a a list of tagged words from the question without stopwords
-
+    # Apply the standard NLP pipeline we've seen before
     sentences = get_sentences(text)
-    answer_tuples = baseline(qbow, sentences, stopwords)
+    # print(sentences)
+    # print(question["text"])
 
-    answer = " ".join(t[0] for t in answer_tuples)
+    # tokenize questions, also removing punctuations to extract keywords
+    tokenizer = RegexpTokenizer(r'\w+')
+    tokenized_question_text = tokenizer.tokenize(question["text"])
+    tagged_tokenized_question_text = nltk.pos_tag(tokenized_question_text)
+    # remove stopwords
+    tagged_keywords_list = []
+    stopwords = set(nltk.corpus.stopwords.words("english"))
+    for word, tag in tagged_tokenized_question_text:
+        if word not in stopwords:
+            tagged_keywords_list.append((word, tag))
 
-    #print("question:", questions)
-    #print(answer)
+    # lemmatize keywords
+    ######################### KEYWORDS MUST BE IN A SPECIFIC ORDER, THIS IS RANDOM
+    ######################### TAGGING FOR SINGLE WORDS ARE USUALLY TREATED AS NOUNS EVEN IF THEY SHOULD BE VERBS
+    lemmatized_keywords_list = []
+
+    for keyword, tag in tagged_keywords_list:
+        lemmatized_keywords_list.append(stemmer.stem(keyword))
+
+    # sort into noun, verb order
+
+    crow_sentences = find_sentences(lemmatized_keywords_list, sentences)
+    # crow_sentences = find_sentences(keywords_list, sentences)
+    # print(crow_sentences)
+    # Extract the candidate locations from these sentences
+    locations = find_candidates(crow_sentences, chunker, question["text"])
+    print("sentences:", len(sentences))
+    print("orignal keywords:", tagged_keywords_list)
+    print("keywords:", lemmatized_keywords_list)
+
+    print("crow_sentences:", len(crow_sentences))
+    print(question["text"], locations)
+
+    if question["difficulty"] == 'Easy' and len(locations) != 0:
+        '''
+        if story["sid"] == "fables-01":
+            print("-----------------------------------------------------")
+            print(crow_sentences)
+            print("keywords:", keywords_list)
+            print("questions:", question["text"])
+            print("loc:", locations)
+            # Print them out
+            for loc in locations:
+                print(loc)
+                print(" ".join([token[0] for token in loc.leaves()]))
+            print("-----------------------------------------------------")
+        '''
+        answer = []
+
+        for loc in locations:
+            answer.append(" ".join([token[0] for token in loc.leaves()]))
+        answer = " ".join(answer)
+
+    elif question["difficulty"] == 'Easy':
+        text = story["text"]
+        questions = question["text"]
+        stopwords = set(nltk.corpus.stopwords.words("english"))
+        qbow = get_bow(get_sentences(questions)[0], stopwords)
+        # get_bow = filters stopwords, returns
+        # get_sentences returns tagged question, in this case, only the first question
+        # qbow therefore is a a list of tagged words from the question without stopwords
+
+        sentences = get_sentences(text)
+        answer_tuples = baseline(qbow, sentences, stopwords)
+        answer = " ".join(t[0] for t in answer_tuples)
+
+        # print("question:", questions)
+        # print(answer)
+    elif question["difficulty"] == 'Medium':
+
 
     ###     End of Your Code         ###
     return answer
