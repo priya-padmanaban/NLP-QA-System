@@ -13,15 +13,15 @@ GRAMMAR =   """
             ADJ: {<JJ.*>}
             NP: {<DT>? <ADJ>* <N>+}
             PP: {<IN> <NP>}
-            VP: {<TO>? <V> (<NP>|<PP>)*}
+            VP: {<TO>? <V> (<NP>|<PP>)* | <PP>? <PRP>? <V> <ADJ>* }
+
             """
 NOUNS = ['NN', 'NNP', 'NNS']
 VERBS = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 
-
 LOC_PP = set(["in", "on", "at"])
 NP_NP = set(["a", "the", "that", "it"])
-WHY_WHY = set(["because"])
+WHY_WHY = set(["because", "for", "to", "so"])
 
 #########################################################################################
 # Chunking helper functions
@@ -32,18 +32,23 @@ def get_sentences(text):
 
     return sentences
 
-
 def pp_filter(subtree):
     return subtree.label() == "PP"
 
 def np_filter(subtree):
     return subtree.label() == "NP"
 
+def why_filter(subtree):
+    return subtree.label() == "VP"
+
 def is_location(prep):
     return prep[0] in LOC_PP
 
 def is_np(prep):
     return prep[0] in NP_NP
+
+def is_why(prep):
+    return prep[0] in WHY_WHY
 
 
 def find_locations(tree):
@@ -69,9 +74,20 @@ def find_np(tree):
     for subtree in tree.subtrees(filter=np_filter):
         if is_np(subtree[0]):
             np.append(subtree)
-
     return np
 
+def find_why(tree):
+    why_p = []
+    # print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+    # print(tree)
+    # print("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/")
+    for subtree in tree.subtrees(filter=why_filter):
+        # print("==================================")
+        # print(subtree)
+        # print("==================================")
+        if is_why(subtree[0]):
+            why_p.append(subtree)
+    return why_p
 
 def find_candidates(crow_sentences, chunker, text):
     candidates = []
@@ -84,23 +100,15 @@ def find_candidates(crow_sentences, chunker, text):
             qType = "np_type"
             np = find_np(tree)
             candidates.extend(np)
-        elif tokenized_question[0] == "where":
+        elif tokenized_question[0] == "where" or tokenized_question[0] == "who":
             qType = "loc_type"
             locations = find_locations(tree)
             candidates.extend(locations)
-        else:
-            locations = find_locations(tree)
-            candidates.extend(locations)
-        '''
-        if tokenized_question[0] == "who":
-            qType = "name_type"
-            name = find_np(tree)
-            candidates.extend(name)
-        if tokenized_question[0] == "why":
+        elif tokenized_question[0] == "why":
             qType = "why_type"
-            why = find_np(tree)
+            why = find_why(tree)
             candidates.extend(why)
-        '''
+
     return candidates
 
 

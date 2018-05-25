@@ -51,6 +51,8 @@ def find_locations(tree):
     # Make sure the crow/subj is to the left
     locations = []
     for subtree in tree.subtrees(filter=pp_filter):
+        print(subtree[0])
+        exit(0)
         if is_location(subtree[0]):
             locations.append(subtree)
     
