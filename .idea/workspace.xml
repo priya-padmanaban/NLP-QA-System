@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/hw7/chunk-demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/chunk-demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7/hw7-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/hw7-responses.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/qa.py" afterDir="false" />
-    </list>
+    <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +45,8 @@
       <file leaf-file-name="qa.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw7/qa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+            <state relative-caret-position="-411">
+              <caret line="270" column="24" lean-forward="true" selection-start-line="270" selection-start-column="24" selection-end-line="270" selection-end-column="24" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -81,8 +77,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-15" />
-    <option name="width" value="1950" />
+    <option name="x" value="1905" />
+    <option name="width" value="1948" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -167,17 +163,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="780" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="762" y="0" width="779" height="830" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32902297" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32902297" />
       <window_info anchor="bottom" id="Version Control" weight="0.32902297" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24930748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24965326" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="SciView" />
@@ -214,10 +209,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../assignment6/submit/qa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        <state relative-caret-position="-411">
+          <caret line="270" column="24" lean-forward="true" selection-start-line="270" selection-start-column="24" selection-end-line="270" selection-end-column="24" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
