@@ -266,6 +266,11 @@ def get_answer(question, story):
     lmtzr = WordNetLemmatizer()
 
     driver = QABase()
+
+    # print(question["qid"])
+    # print(question["difficulty"])
+
+    # question["qid"] returns the form: "fables-04-7"
     q = driver.get_question(question["qid"])
     current_story = driver.get_story(q["sid"])
     text = story["text"]
@@ -287,14 +292,10 @@ def get_answer(question, story):
             tagged_keywords_list.append((word, tag))
 
     # lemmatize keywords
-    ######################### KEYWORDS MUST BE IN A SPECIFIC ORDER, THIS IS RANDOM
-    ######################### TAGGING FOR SINGLE WORDS ARE USUALLY TREATED AS NOUNS EVEN IF THEY SHOULD BE VERBS
     lemmatized_keywords_list = []
 
     for keyword, tag in tagged_keywords_list:
         lemmatized_keywords_list.append(stemmer.stem(keyword))
-
-    # sort into noun, verb order
 
     crow_sentences = find_sentences(lemmatized_keywords_list, sentences)
     # crow_sentences = find_sentences(keywords_list, sentences)
@@ -307,6 +308,7 @@ def get_answer(question, story):
     #
     # print("crow_sentences:", len(crow_sentences))
     # print(question["text"], locations)
+
 
     if question["difficulty"] == 'Easy' and len(locations) != 0:
         '''
@@ -329,29 +331,30 @@ def get_answer(question, story):
         answer = " ".join(answer)
 
     elif question["difficulty"] == 'Medium':
-        sid_content = driver.get_story(story["sid"])
+        # print("type: ", question["type"])
+        if question["type"] != 'Story':
 
-        if len(sid_content["sch_par"]) != 0:
-            tree = sid_content["sch_par"][1]
+            tree = current_story["sch_par"][1]
             # print(tree)
             # Create our pattern
             pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
 
-            # # Match our pattern to the tree
             subtree = pattern_matcher(pattern, tree)
+            # print(subtree)
+            if subtree == None:
+                answer = doBaseline(question, story)
+            else:
+                # print(subtree)
+                # print(" ".join(subtree.leaves()))
 
-        # print(subtree)
-        # print(" ".join(subtree.leaves()))
-        if len(sid_content["sch_par"]) == 0 or subtree == None:
+                # create a new pattern to match a smaller subset of subtree
+                pattern = nltk.ParentedTree.fromstring("(PP)")
+
+                # Find and make the answer
+                subtree2 = pattern_matcher(pattern, subtree) #problem = subtree is NoneType
+                answer = " ".join(subtree2.leaves())
+        elif question["type"] == 'Story':
             answer = doBaseline(question, story)
-        else:
-            # create a new pattern to match a smaller subset of subtree
-            pattern = nltk.ParentedTree.fromstring("(PP)")
-
-            # Find and print the answer
-            subtree2 = pattern_matcher(pattern, subtree)
-            answer = " ".join(subtree2.leaves())
-
     else:
         answer = doBaseline(question, story)
         
