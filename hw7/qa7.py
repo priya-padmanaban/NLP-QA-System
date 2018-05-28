@@ -11,17 +11,15 @@ GRAMMAR =   """
             N: {<PRP>|<NN.*>}
             V: {<V.*>}
             ADJ: {<JJ.*>}
-            NP: {<DT>? <ADJ>* <N>+}
+            NP: {<DT>? <ADJ>* (<N>|<IN>)+  }
             PP: {<IN> <NP>}
-            VP: {<TO>? <V> (<NP>|<PP>)* | <PP>? <PRP>? <V> <ADJ>* }
-
+            VP: {<TO>? <V> (<NP>|<PP>)* }
             """
-NOUNS = ['NN', 'NNP', 'NNS']
-VERBS = ['VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
 
 LOC_PP = set(["in", "on", "at"])
-NP_NP = set(["a", "the", "that", "it"])
+NP_NP = set(["a", "the", "that", "it", "to"])
 WHY_WHY = set(["because", "for", "to", "so"])
+WHO_N = set(["the", "I", "a"])
 
 #########################################################################################
 # Chunking helper functions
@@ -32,6 +30,7 @@ def get_sentences(text):
 
     return sentences
 
+
 def pp_filter(subtree):
     return subtree.label() == "PP"
 
@@ -41,6 +40,10 @@ def np_filter(subtree):
 def why_filter(subtree):
     return subtree.label() == "VP"
 
+def who_filter(subtree):
+    return subtree.label() == "N"
+
+
 def is_location(prep):
     return prep[0] in LOC_PP
 
@@ -49,6 +52,9 @@ def is_np(prep):
 
 def is_why(prep):
     return prep[0] in WHY_WHY
+
+def is_who(prep):
+    return prep[0] in WHO_N
 
 
 def find_locations(tree):
@@ -89,18 +95,24 @@ def find_why(tree):
             why_p.append(subtree)
     return why_p
 
-def find_candidates(crow_sentences, chunker, text):
+def find_who(tree):
+    who_p = []
+    for subtree in tree.subtrees(filter=who_filter):
+        if is_who(subtree[0]):
+            who_p.append(subtree)
+    return who_p
+
+def find_candidates(target_sentences, chunker, text):
     candidates = []
     tokenized_question = nltk.word_tokenize(text.lower())
-
-    for sent in crow_sentences:
+    for sent in target_sentences:
         tree = chunker.parse(sent)
         # print(tree)
         if tokenized_question[0] == "what":
             qType = "np_type"
             np = find_np(tree)
             candidates.extend(np)
-        elif tokenized_question[0] == "where" or tokenized_question[0] == "who":
+        elif tokenized_question[0] == "where":
             qType = "loc_type"
             locations = find_locations(tree)
             candidates.extend(locations)
@@ -108,6 +120,10 @@ def find_candidates(crow_sentences, chunker, text):
             qType = "why_type"
             why = find_why(tree)
             candidates.extend(why)
+        elif tokenized_question[0] == "who":
+            qType = "who_type"
+            who = find_who(tree)
+            candidates.extend(who)
 
     return candidates
 
@@ -167,14 +183,12 @@ def matches(pattern, root):
 
     return None
 
-
 def pattern_matcher(pattern, tree):
     for subtree in tree.subtrees():
         node = matches(pattern, subtree)
         if node is not None:
             return node
     return None
-
 
 #########################################################################################
 
@@ -187,10 +201,8 @@ def get_sentences(text):
 
     return sentences
 
-
 def get_bow(tagged_tokens, stopwords):
     return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
-
 
 def baseline(qbow, sentences, stopwords):
     # Collect all the candidate answers
@@ -267,9 +279,6 @@ def get_answer(question, story):
 
     driver = QABase()
 
-    # print(question["qid"])
-    # print(question["difficulty"])
-
     # question["qid"] returns the form: "fables-04-7"
     q = driver.get_question(question["qid"])
     current_story = driver.get_story(q["sid"])
@@ -277,13 +286,12 @@ def get_answer(question, story):
 
     # Apply the standard NLP pipeline we've seen before
     sentences = get_sentences(text)
-    # print(sentences)
-    # print(question["text"])
 
     # tokenize questions, also removing punctuations to extract keywords
     tokenizer = RegexpTokenizer(r'\w+')
     tokenized_question_text = tokenizer.tokenize(question["text"])
     tagged_tokenized_question_text = nltk.pos_tag(tokenized_question_text)
+
     # remove stopwords
     tagged_keywords_list = []
     stopwords = set(nltk.corpus.stopwords.words("english"))
@@ -293,45 +301,35 @@ def get_answer(question, story):
 
     # lemmatize keywords
     lemmatized_keywords_list = []
-
     for keyword, tag in tagged_keywords_list:
         lemmatized_keywords_list.append(stemmer.stem(keyword))
 
-    crow_sentences = find_sentences(lemmatized_keywords_list, sentences)
-    # crow_sentences = find_sentences(keywords_list, sentences)
-    # print(crow_sentences)
+    # Find the sentences that have all of our keywords in them
+    target_sentences = find_sentences(lemmatized_keywords_list, sentences)
     # Extract the candidate locations from these sentences
-    locations = find_candidates(crow_sentences, chunker, question["text"])
-    # print("sentences:", len(sentences))
-    # print("orignal keywords:", tagged_keywords_list)
-    # print("keywords:", lemmatized_keywords_list)
-    #
-    # print("crow_sentences:", len(crow_sentences))
-    # print(question["text"], locations)
+    candidates_forest = find_candidates(target_sentences, chunker, question["text"])
+
+    if (question["difficulty"] == 'Easy' and len(candidates_forest) != 0) or \
+            (question["difficulty"] == 'Medium' and question["type"] == 'Story' and len(candidates_forest) != 0):
+
+        possible_answers_list = []
+
+        # locations is a list of trees
+        for candidate in candidates_forest:
+            # candidate.draw()
+            possible_answers_list.append(" ".join([token[0] for token in candidate.leaves()]))
+        answer = " ".join(possible_answers_list)
+
+        ###########################################
+        # currently, possible_answer contains the actual needed answer,
+        # plus some garbage words around it from chunking,
+        # we might be able to filter this out SOMEHOW
+        # possible_answer is a list of strings
+        ###########################################
 
 
-    if question["difficulty"] == 'Easy' and len(locations) != 0:
-        '''
-        if story["sid"] == "fables-01":
-            print("-----------------------------------------------------")
-            print(crow_sentences)
-            print("keywords:", keywords_list)
-            print("questions:", question["text"])
-            print("loc:", locations)
-            # Print them out
-            for loc in locations:
-                print(loc)
-                print(" ".join([token[0] for token in loc.leaves()]))
-            print("-----------------------------------------------------")
-        '''
-        answer = []
+    elif question["difficulty"] == 'Medium' or question["difficulty"] == 'Easy':
 
-        for loc in locations:
-            answer.append(" ".join([token[0] for token in loc.leaves()]))
-        answer = " ".join(answer)
-
-    elif question["difficulty"] == 'Medium':
-        # print("type: ", question["type"])
         if question["type"] != 'Story':
 
             tree = current_story["sch_par"][1]
@@ -342,22 +340,28 @@ def get_answer(question, story):
             subtree = pattern_matcher(pattern, tree)
             # print(subtree)
             if subtree == None:
+                #######################################
                 answer = doBaseline(question, story)
+                # answer = "doBaseline"
+                #######################################
             else:
-                # print(subtree)
-                # print(" ".join(subtree.leaves()))
-
-                # create a new pattern to match a smaller subset of subtree
+                # create a new pattern to match a smaller subset of subtrees
                 pattern = nltk.ParentedTree.fromstring("(PP)")
 
                 # Find and make the answer
                 subtree2 = pattern_matcher(pattern, subtree) #problem = subtree is NoneType
                 answer = " ".join(subtree2.leaves())
+
         elif question["type"] == 'Story':
+            #######################################
             answer = doBaseline(question, story)
+            # answer = "doBaseline"
+            #######################################
     else:
+        #########################################
         answer = doBaseline(question, story)
-        
+        # answer = "doBaseline"
+        #########################################
 
     ###     End of Your Code         ###
     return answer
@@ -376,8 +380,6 @@ def doBaseline(question, story):
     answer = " ".join(t[0] for t in answer_tuples)
 
     return answer
-    # print("question:", questions)
-    # print(answer)
 
 
 #############################################################

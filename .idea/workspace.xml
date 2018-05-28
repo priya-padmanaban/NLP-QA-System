@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw7/data/hw7-answers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/data/hw7-answers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw7/data/hw7-questions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/data/hw7-questions.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7/hw7-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/hw7-responses.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7/qa7.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/qa7.py" afterDir="false" />
     </list>
@@ -21,7 +23,7 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="constituency-demo-stub.py" pinned="false" current-in-tab="true">
+            <file leaf-file-name="constituency-demo-stub.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/hw7/constituency-demo-stub.py">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="370">
@@ -30,11 +32,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="chunk-demo.py" pinned="false" current-in-tab="false">
+            <file leaf-file-name="chunk-demo.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/hw7/chunk-demo.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="781">
-                    <caret line="109" column="11" lean-forward="true" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
+                  <state relative-caret-position="472">
+                    <caret line="118" column="58" lean-forward="true" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="58" />
                   </state>
                 </provider>
               </entry>
@@ -61,16 +63,39 @@
       <file leaf-file-name="qa7.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="274" column="46" lean-forward="true" selection-start-line="274" selection-start-column="46" selection-end-line="274" selection-end-column="46" />
+            <state relative-caret-position="425">
+              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#926#1108#0" />
+                <element signature="e#1138#1168#0" />
+                <element signature="e#1198#1228#0" />
+                <element signature="e#1259#1289#0" />
+                <element signature="e#1223#1251#0" />
+                <element signature="e#1318#1342#0" />
+                <element signature="e#1365#1388#0" />
+                <element signature="e#1412#1437#0" />
+                <element signature="e#1424#1447#0" />
+                <element signature="e#1470#2122#0" />
+                <element signature="e#2147#2281#0" />
+                <element signature="e#2307#2729#0" />
+                <element signature="e#2790#3068#0" />
+                <element signature="e#5885#6067#0" />
+                <element signature="e#6113#6195#0" />
+                <element signature="e#6244#6913#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>doBaseline</find>
+      <find>dobaseline</find>
+      <find>baseline</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,8 +119,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1332" />
-    <option name="width" value="2523" />
+    <option name="x" value="1707" />
+    <option name="width" value="2145" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -180,17 +205,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="533" y="0" width="1009" height="830" extended-state="0" />
+    <frame x="683" y="0" width="858" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32902297" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32902297" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32902297" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19453207" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23125" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -240,13 +265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw7/chunk-demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="109" column="11" lean-forward="true" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../assignment7/qa.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -264,12 +282,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hw7/chunk-demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="118" column="58" lean-forward="true" selection-start-line="118" selection-start-column="4" selection-end-line="118" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="274" column="46" lean-forward="true" selection-start-line="274" selection-start-column="46" selection-end-line="274" selection-end-column="46" />
+        <state relative-caret-position="425">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#926#1108#0" />
+            <element signature="e#1138#1168#0" />
+            <element signature="e#1198#1228#0" />
+            <element signature="e#1259#1289#0" />
+            <element signature="e#1223#1251#0" />
+            <element signature="e#1318#1342#0" />
+            <element signature="e#1365#1388#0" />
+            <element signature="e#1412#1437#0" />
+            <element signature="e#1424#1447#0" />
+            <element signature="e#1470#2122#0" />
+            <element signature="e#2147#2281#0" />
+            <element signature="e#2307#2729#0" />
+            <element signature="e#2790#3068#0" />
+            <element signature="e#5885#6067#0" />
+            <element signature="e#6113#6195#0" />
+            <element signature="e#6244#6913#0" />
           </folding>
         </state>
       </provider>
