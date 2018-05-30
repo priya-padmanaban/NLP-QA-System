@@ -54,7 +54,8 @@ if __name__ == '__main__':
     driver = QABase()
     q = driver.get_question("fables-01-1")
     story = driver.get_story(q["sid"])
-
+    # print(q["sid"])
+    print(story["sch_par"][1])
     tree = story["sch_par"][1]
     # print(tree)
     # Create our pattern
@@ -62,7 +63,7 @@ if __name__ == '__main__':
 
     # # Match our pattern to the tree  
     subtree = pattern_matcher(pattern, tree)
-    print(subtree)
+    # print(subtree)
     # print(" ".join(subtree.leaves()))
     
     # create a new pattern to match a smaller subset of subtree

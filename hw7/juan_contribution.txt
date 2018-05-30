@@ -6,4 +6,8 @@ made if else cases for chunking and basic baseline operation.
 
 HW7
 Improved chunking to be able to classify different types of Wh-questions.
-Implemented constituency parse trees to be able to more accurately answer medium level questions. 
+Chunking was not able to classifiy who-type questions before.
+Implemented constituency parse trees to be able to more accurately answer medium level questions.
+A lot of the questions was answered by the baseline algorithm, the reason for this was that the if statements did not capture questions that can be answered by other algorithms.
+For example, a medium question with type-Story could be answered by chunking, which was passed to baseline before.
+Re-ordered questions to be handled by appropriate algorithms.

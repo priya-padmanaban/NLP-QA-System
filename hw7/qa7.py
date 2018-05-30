@@ -11,7 +11,7 @@ GRAMMAR =   """
             N: {<PRP>|<NN.*>}
             V: {<V.*>}
             ADJ: {<JJ.*>}
-            NP: {<DT>? <ADJ>* (<N>|<IN>)+  }
+            NP: {<DT>? <ADJ>* (<N>|<IN>)+}
             PP: {<IN> <NP>}
             VP: {<TO>? <V> (<NP>|<PP>)* }
             """
@@ -20,6 +20,7 @@ LOC_PP = set(["in", "on", "at"])
 NP_NP = set(["a", "the", "that", "it", "to"])
 WHY_WHY = set(["because", "for", "to", "so"])
 WHO_N = set(["the", "I", "a"])
+HOW_HOW = set([""])
 
 #########################################################################################
 # Chunking helper functions
@@ -41,20 +42,25 @@ def why_filter(subtree):
     return subtree.label() == "VP"
 
 def who_filter(subtree):
-    return subtree.label() == "N"
+    return subtree.label() == "NP"
 
+def how_filter(subtree):
+    return subtree.label() == "JJ"
 
 def is_location(prep):
     return prep[0] in LOC_PP
 
-def is_np(prep):
-    return prep[0] in NP_NP
+def is_np(dt):
+    return dt[0] in NP_NP
 
-def is_why(prep):
-    return prep[0] in WHY_WHY
+def is_why(y):
+    return y[0] in WHY_WHY
 
-def is_who(prep):
-    return prep[0] in WHO_N
+def is_who(h):
+    return h[0] in WHO_N
+
+def is_how(h):
+    return h[0] in HOW_HOW
 
 
 def find_locations(tree):
@@ -112,7 +118,7 @@ def find_candidates(target_sentences, chunker, text):
             qType = "np_type"
             np = find_np(tree)
             candidates.extend(np)
-        elif tokenized_question[0] == "where":
+        elif tokenized_question[0] == "where" or tokenized_question[0] == "when":
             qType = "loc_type"
             locations = find_locations(tree)
             candidates.extend(locations)
@@ -331,14 +337,37 @@ def get_answer(question, story):
     elif question["difficulty"] == 'Medium' or question["difficulty"] == 'Easy':
 
         if question["type"] != 'Story':
-
+            Q = nltk.word_tokenize(question["text"].lower())
+            # print(Q)
             tree = current_story["sch_par"][1]
+            if question["qid"] == 'blogs-03-11':
+                print(tree)
             # print(tree)
             # Create our pattern
-            pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
 
+            #########################################
+            # MAKE PATTERN FIT FOR TYPE OF QUESTION #
+            #########################################
+            # print(Q[0])
+            if Q[0] == 'where' or Q[0] == 'when':
+                pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+            elif Q[0] == 'who':
+                pattern = nltk.ParentedTree.fromstring("(NP)")
+                if question["qid"] == 'blogs-03-10':
+                    print(pattern)
+            elif Q[0] == 'what':
+                    pattern = nltk.ParentedTree.fromstring("( ((DT)? (*) (NP))+ )")
+            elif Q[0] == 'why':
+                    pattern = nltk.ParentedTree.fromstring("( (TO)? (V) ((NP)|(PP))* )")
+            elif Q[0] == 'how':
+                    pattern = nltk.ParentedTree.fromstring("( (JJ.*) )")
             subtree = pattern_matcher(pattern, tree)
             # print(subtree)
+
+            if question["qid"] == 'blogs-03-11':
+                print("hello")
+                print(subtree)
+
             if subtree == None:
                 #######################################
                 answer = doBaseline(question, story)
@@ -346,10 +375,22 @@ def get_answer(question, story):
                 #######################################
             else:
                 # create a new pattern to match a smaller subset of subtrees
-                pattern = nltk.ParentedTree.fromstring("(PP)")
+                if Q[0] == 'where' or Q[0] == 'where':
+                    pattern = nltk.ParentedTree.fromstring("(PP)")
+                elif Q[0] == 'who':
+                    pattern = nltk.ParentedTree.fromstring("(NP)")
+                    if question["qid"] == 'blogs-03-11':
+                        print(pattern)
+                        exit(0)
+                elif Q[0] == 'what':
+                    pattern = nltk.ParentedTree.fromstring("(NN)")
+                elif Q[0] == 'why':
+                    pattern = nltk.ParentedTree.fromstring("( (TO) (V) ((NP)|(PP)) )")
+                elif Q[0] == 'how':
+                    pattern = nltk.ParentedTree.fromstring("( (JJ.*) ")
 
                 # Find and make the answer
-                subtree2 = pattern_matcher(pattern, subtree) #problem = subtree is NoneType
+                subtree2 = pattern_matcher(pattern, subtree)
                 answer = " ".join(subtree2.leaves())
 
         elif question["type"] == 'Story':
