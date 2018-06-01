@@ -35,6 +35,7 @@ def baseline(qbow, sentences, stopwords):
     answers = []
     for sent in sentences:
         # A list of all the word tokens in the sentence
+        # print(sent)
         sbow = get_bow(sent, stopwords)
         
         # Count the # of overlapping words between the Q and the A
@@ -42,13 +43,15 @@ def baseline(qbow, sentences, stopwords):
         overlap = len(qbow & sbow)
         
         answers.append((overlap, sent))
-        
+
+    # print("=====================================================")
     # Sort the results by the first element of the tuple (i.e., the count)
     # Sort answers from smallest to largest by default, so reverse it
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
 
     # Return the best answer
-    best_answer = (answers[0])[1]    
+    best_answer = (answers[0])[1]
+
     return best_answer
 
 
@@ -60,10 +63,11 @@ if __name__ == '__main__':
     q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
     text = story["text"]
+    print(text)
     question = q["text"]
     print("question:", question)
     stopwords = set(nltk.corpus.stopwords.words("english"))
-
+    # print(get_sentences(question)[0])
     qbow = get_bow(get_sentences(question)[0], stopwords)
     sentences = get_sentences(text)
     answer = baseline(qbow, sentences, stopwords)

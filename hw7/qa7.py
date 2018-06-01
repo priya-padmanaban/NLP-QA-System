@@ -244,6 +244,17 @@ def get_question_type(text):
     if tokenized_question[0] == "why":
         return "why_type"
 
+def best_overlap_index(qbow, sentences, stopwords):
+    answers = []
+    for i in range (0, len(sentences)):
+        sbow = get_bow(sentences[i], stopwords)
+        overlap = len(qbow & sbow)
+        answers.append((overlap, i, sentences[i]))
+    answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
+
+    # return best index for the most overlap
+    best_answer = (answers[0])[1]
+    return best_answer
 def get_answer(question, story):
     """
     :param question: dict
@@ -279,6 +290,7 @@ def get_answer(question, story):
     """
     ###     Your Code Goes Here         ###
     # Our tools
+
     stemmer = SnowballStemmer("english")
     chunker = nltk.RegexpParser(GRAMMAR)
     lmtzr = WordNetLemmatizer()
@@ -339,8 +351,17 @@ def get_answer(question, story):
         if question["type"] != 'Story':
             Q = nltk.word_tokenize(question["text"].lower())
             # print(Q)
-            tree = current_story["sch_par"][1]
-            if question["qid"] == 'blogs-03-11':
+
+            sentences = get_sentences(current_story["sch"])
+
+            stop_words = set(nltk.corpus.stopwords.words("english"))
+            qbow = get_bow(get_sentences(question["text"])[0], stopwords)
+
+            best_idx = best_overlap_index(qbow, sentences, stop_words)
+            # print(question["qid"], best_idx)
+            tree = current_story["sch_par"][best_idx]
+            if question["qid"] == 'blogs-03-12':
+                print(Q)
                 print(tree)
             # print(tree)
             # Create our pattern
@@ -353,10 +374,10 @@ def get_answer(question, story):
                 pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
             elif Q[0] == 'who':
                 pattern = nltk.ParentedTree.fromstring("(NP)")
-                if question["qid"] == 'blogs-03-10':
+                if question["qid"] == 'blogs-03-12':
                     print(pattern)
             elif Q[0] == 'what':
-                    pattern = nltk.ParentedTree.fromstring("( ((DT)? (*) (NP))+ )")
+                    pattern = nltk.ParentedTree.fromstring("( NP (DT)* (*) ((NN)|(IN))+ )")
             elif Q[0] == 'why':
                     pattern = nltk.ParentedTree.fromstring("( (TO)? (V) ((NP)|(PP))* )")
             elif Q[0] == 'how':
@@ -364,8 +385,9 @@ def get_answer(question, story):
             subtree = pattern_matcher(pattern, tree)
             # print(subtree)
 
-            if question["qid"] == 'blogs-03-11':
-                print("hello")
+            if question["qid"] == 'blogs-03-12':
+                print(question["sid"])
+                print("subtree")
                 print(subtree)
 
             if subtree == None:
@@ -376,22 +398,23 @@ def get_answer(question, story):
             else:
                 # create a new pattern to match a smaller subset of subtrees
                 if Q[0] == 'where' or Q[0] == 'where':
-                    pattern = nltk.ParentedTree.fromstring("(PP)")
+                    pattern = nltk.ParentedTree.fromstring("(VP)")
                 elif Q[0] == 'who':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
-                    if question["qid"] == 'blogs-03-11':
+                    if question["qid"] == 'blogs-03-12':
                         print(pattern)
-                        exit(0)
                 elif Q[0] == 'what':
-                    pattern = nltk.ParentedTree.fromstring("(NN)")
+                    pattern = nltk.ParentedTree.fromstring("(NP)")
                 elif Q[0] == 'why':
                     pattern = nltk.ParentedTree.fromstring("( (TO) (V) ((NP)|(PP)) )")
                 elif Q[0] == 'how':
                     pattern = nltk.ParentedTree.fromstring("( (JJ.*) ")
 
                 # Find and make the answer
+                # print(subtree)
                 subtree2 = pattern_matcher(pattern, subtree)
                 answer = " ".join(subtree2.leaves())
+
 
         elif question["type"] == 'Story':
             #######################################

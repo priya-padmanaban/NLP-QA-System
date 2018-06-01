@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw7/baseline-stub.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/baseline-stub.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7/constituency-demo-stub.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/constituency-demo-stub.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7/hw7-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/hw7-responses.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7/juan_contribution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/juan_contribution.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7/qa7.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/qa7.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +22,21 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file leaf-file-name="constituency-demo-stub.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/hw7/constituency-demo-stub.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="952">
-                    <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+                  <state relative-caret-position="659">
+                    <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="baseline-stub.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/hw7/baseline-stub.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1156">
+                    <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
                   </state>
                 </provider>
               </entry>
@@ -42,8 +51,8 @@
       <file leaf-file-name="qa7.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="343" column="26" selection-start-line="343" selection-start-column="26" selection-end-line="343" selection-end-column="26" />
+            <state relative-caret-position="17">
+              <caret line="379" column="70" selection-start-line="379" selection-start-column="70" selection-end-line="379" selection-end-column="70" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -59,6 +68,7 @@
       <find>dobaseline</find>
       <find>baseline</find>
       <find>sch</find>
+      <find>stopword</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,6 +80,7 @@
         <option value="$PROJECT_DIR$/hw7/chunk-demo.py" />
         <option value="$PROJECT_DIR$/hw7/qa.py" />
         <option value="$PROJECT_DIR$/hw7/constituency-demo-stub.py" />
+        <option value="$PROJECT_DIR$/hw7/baseline-stub.py" />
         <option value="$PROJECT_DIR$/hw7/qa7.py" />
       </list>
     </option>
@@ -85,7 +96,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-15" />
-    <option name="width" value="2338" />
+    <option name="width" value="1948" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -93,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,11 +120,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../extra credit" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -170,7 +181,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="935" height="830" extended-state="0" />
+    <frame x="-6" y="0" width="779" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -180,7 +191,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32902297" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21664767" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26907074" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -202,7 +213,39 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hw7/qa7.py</url>
+          <line>157</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hw7/qa7.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hw7/qa7.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6443">
+          <caret line="379" column="70" selection-start-line="379" selection-start-column="70" selection-end-line="379" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -233,23 +276,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="346" column="9" lean-forward="true" selection-start-line="346" selection-start-column="9" selection-end-line="346" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw7/constituency-demo-stub.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="59" column="17" lean-forward="true" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+        <state relative-caret-position="659">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw7/baseline-stub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="343" column="26" selection-start-line="343" selection-start-column="26" selection-end-line="343" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="379" column="70" selection-start-line="379" selection-start-column="70" selection-end-line="379" selection-end-column="70" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
