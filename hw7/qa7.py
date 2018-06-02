@@ -22,6 +22,8 @@ WHY_WHY = set(["because", "for", "to", "so"])
 WHO_N = set(["the", "I", "a"])
 HOW_HOW = set([""])
 
+VERBS = ['VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
+
 #########################################################################################
 # Chunking helper functions
 def get_sentences(text):
@@ -244,13 +246,32 @@ def get_question_type(text):
     if tokenized_question[0] == "why":
         return "why_type"
 
-def best_overlap_index(qbow, sentences, stopwords):
+def best_overlap_index(qbow, sentences, stopwords, question):
     answers = []
     for i in range (0, len(sentences)):
         sbow = get_bow(sentences[i], stopwords)
         overlap = len(qbow & sbow)
         answers.append((overlap, i, sentences[i]))
+
+        if question["qid"] == 'fables-01-13':
+            print("sbow:", sbow)
+
+    if question["qid"] == 'fables-01-13':
+        i = 0
+        for item in answers:
+            print(i, item)
+            i += 1
+
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
+    ###########################################
+    # CURRENT PROBLEM: SOME SENTENCES HAVE THE
+    #                  SAME AMOUNT OF OVERLAP
+    #                  BEST_IDX DOESN'T ALWAYS
+    #                  PICK THE BEST SENTENCE
+    # Note: question in param, delete after debugging
+    ############################################
+
+    ############################################
 
     # return best index for the most overlap
     best_answer = (answers[0])[1]
@@ -352,15 +373,32 @@ def get_answer(question, story):
             Q = nltk.word_tokenize(question["text"].lower())
             # print(Q)
 
-            sentences = get_sentences(current_story["sch"])
 
+            sentences = get_sentences(current_story["sch"])
+            all_stemmed_sentences = []
+            for sent in sentences:
+                temp_sent = []
+                for w, pos in sent:
+                    temp_sent.append((stemmer.stem(w), pos))
+                all_stemmed_sentences.append(temp_sent)
             stop_words = set(nltk.corpus.stopwords.words("english"))
             qbow = get_bow(get_sentences(question["text"])[0], stopwords)
-
-            best_idx = best_overlap_index(qbow, sentences, stop_words)
+            stemmed_qbow = []
+            for w in qbow:
+                stemmed_qbow.append(stemmer.stem(w))
+            stemmed_qbow = set(stemmed_qbow)
+            best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stop_words, question)
             # print(question["qid"], best_idx)
+            if question["qid"] == 'fables-01-13':
+                print("=======================")
+                print(sentences[9])
+                print(all_stemmed_sentences[9])
+                print("=======================")
+
+                print(qbow)
+                print(best_idx)
             tree = current_story["sch_par"][best_idx]
-            if question["qid"] == 'blogs-03-12':
+            if question["qid"] == 'fables-01-13':
                 print(Q)
                 print(tree)
             # print(tree)
@@ -374,18 +412,18 @@ def get_answer(question, story):
                 pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
             elif Q[0] == 'who':
                 pattern = nltk.ParentedTree.fromstring("(NP)")
-                if question["qid"] == 'blogs-03-12':
+                if question["qid"] == 'fables-01-13':
                     print(pattern)
             elif Q[0] == 'what':
-                    pattern = nltk.ParentedTree.fromstring("( NP (DT)* (*) ((NN)|(IN))+ )")
+                    pattern = nltk.ParentedTree.fromstring("(NP)")
             elif Q[0] == 'why':
                     pattern = nltk.ParentedTree.fromstring("( (TO)? (V) ((NP)|(PP))* )")
             elif Q[0] == 'how':
-                    pattern = nltk.ParentedTree.fromstring("( (JJ.*) )")
+                    pattern = nltk.ParentedTree.fromstring("(RB)")
             subtree = pattern_matcher(pattern, tree)
             # print(subtree)
 
-            if question["qid"] == 'blogs-03-12':
+            if question["qid"] == 'fables-01-13':
                 print(question["sid"])
                 print("subtree")
                 print(subtree)
@@ -401,14 +439,14 @@ def get_answer(question, story):
                     pattern = nltk.ParentedTree.fromstring("(VP)")
                 elif Q[0] == 'who':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
-                    if question["qid"] == 'blogs-03-12':
+                    if question["qid"] == 'fables-01-13':
                         print(pattern)
                 elif Q[0] == 'what':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
                 elif Q[0] == 'why':
                     pattern = nltk.ParentedTree.fromstring("( (TO) (V) ((NP)|(PP)) )")
                 elif Q[0] == 'how':
-                    pattern = nltk.ParentedTree.fromstring("( (JJ.*) ")
+                    pattern = nltk.ParentedTree.fromstring("(RB)")
 
                 # Find and make the answer
                 # print(subtree)
