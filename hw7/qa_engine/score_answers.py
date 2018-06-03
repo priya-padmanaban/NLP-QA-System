@@ -42,7 +42,7 @@ def score_all_answers(gold, pred):
         best = np.argmax(scores["f"])
         best_gold = golds[best]
 
-        # print('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
+        print('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
         all_scores["p"].append(scores["p"][best])
         all_scores["r"].append(scores["r"][best])
         all_scores["f"].append(scores["f"][best])

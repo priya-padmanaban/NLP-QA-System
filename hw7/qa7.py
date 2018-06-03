@@ -16,10 +16,10 @@ GRAMMAR =   """
             VP: {<TO>? <V> (<NP>|<PP>)* }
             """
 
-LOC_PP = set(["in", "on", "at"])
-NP_NP = set(["a", "the", "that", "it", "to"])
-WHY_WHY = set(["because", "for", "to", "so"])
-WHO_N = set(["the", "I", "a"])
+LOC_PP = set(["in", "on", "at", "In", "On", "At"])
+NP_NP = set(["a", "the", "that", "it", "to", "At", "The", "That", "It", "To"])
+WHY_WHY = set(["because", "for", "to", "so", "Because", "For", "To", "So"])
+WHO_N = set(["the", "The", "I", "a", "A"])
 HOW_HOW = set([""])
 
 VERBS = ['VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
