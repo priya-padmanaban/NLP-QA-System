@@ -14,8 +14,8 @@
       <file leaf-file-name="qa7.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/qa7.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="376" column="59" selection-start-line="376" selection-start-column="59" selection-end-line="376" selection-end-column="59" />
+            <state relative-caret-position="190">
+              <caret line="350" column="74" selection-start-line="350" selection-start-column="74" selection-end-line="350" selection-end-column="74" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -60,9 +60,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1105" />
-    <option name="width" value="2748" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-15" />
+    <option name="width" value="1950" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -121,7 +121,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="442" y="0" width="1099" height="830" extended-state="0" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -131,7 +131,7 @@
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16042267" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11200537" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="SciView" />
@@ -166,8 +166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/qa7.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="376" column="59" selection-start-line="376" selection-start-column="59" selection-end-line="376" selection-end-column="59" />
+        <state relative-caret-position="190">
+          <caret line="350" column="74" selection-start-line="350" selection-start-column="74" selection-end-line="350" selection-end-column="74" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>

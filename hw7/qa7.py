@@ -253,10 +253,10 @@ def best_overlap_index(qbow, sentences, stopwords, question):
         overlap = len(qbow & sbow)
         answers.append((overlap, i, sentences[i]))
 
-        if question["qid"] == 'fables-01-13':
+        if question["qid"] == 'mc500.train.18.18':
             print("sbow:", sbow)
 
-    if question["qid"] == 'fables-01-13':
+    if question["qid"] == 'mc500.train.18.18':
         i = 0
         for item in answers:
             print(i, item)
@@ -348,8 +348,7 @@ def get_answer(question, story):
     # Extract the candidate locations from these sentences
     candidates_forest = find_candidates(target_sentences, chunker, question["text"])
 
-    if (question["difficulty"] == 'Easy' and len(candidates_forest) != 0) or \
-            (question["difficulty"] == 'Medium' and question["type"] == 'Story' and len(candidates_forest) != 0):
+    if (question["difficulty"] == 'Easy' and len(candidates_forest) != 0):
 
         possible_answers_list = []
 
@@ -389,7 +388,7 @@ def get_answer(question, story):
             stemmed_qbow = set(stemmed_qbow)
             best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stop_words, question)
             # print(question["qid"], best_idx)
-            if question["qid"] == 'fables-01-13':
+            if question["qid"] == 'mc500.train.18.18':
                 print("=======================")
                 print(sentences[9])
                 print(all_stemmed_sentences[9])
@@ -398,7 +397,7 @@ def get_answer(question, story):
                 print(qbow)
                 print(best_idx)
             tree = current_story["sch_par"][best_idx]
-            if question["qid"] == 'fables-01-13':
+            if question["qid"] == 'mc500.train.18.18':
                 print(Q)
                 print(tree)
             # print(tree)
@@ -412,18 +411,20 @@ def get_answer(question, story):
                 pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
             elif Q[0] == 'who':
                 pattern = nltk.ParentedTree.fromstring("(NP)")
-                if question["qid"] == 'fables-01-13':
-                    print(pattern)
             elif Q[0] == 'what':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
             elif Q[0] == 'why':
-                    pattern = nltk.ParentedTree.fromstring("( (TO)? (V) ((NP)|(PP))* )")
+                    pattern = nltk.ParentedTree.fromstring("(SBAR)")
             elif Q[0] == 'how':
                     pattern = nltk.ParentedTree.fromstring("(RB)")
-            subtree = pattern_matcher(pattern, tree)
-            # print(subtree)
 
-            if question["qid"] == 'fables-01-13':
+            ############################################
+            if question["qid"] == 'mc500.train.18.18':
+                print(pattern)
+            ############################################
+            subtree = pattern_matcher(pattern, tree)
+
+            if question["qid"] == 'mc500.train.18.18':
                 print(question["sid"])
                 print("subtree")
                 print(subtree)
@@ -439,15 +440,16 @@ def get_answer(question, story):
                     pattern = nltk.ParentedTree.fromstring("(VP)")
                 elif Q[0] == 'who':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
-                    if question["qid"] == 'fables-01-13':
-                        print(pattern)
                 elif Q[0] == 'what':
                     pattern = nltk.ParentedTree.fromstring("(NP)")
                 elif Q[0] == 'why':
-                    pattern = nltk.ParentedTree.fromstring("( (TO) (V) ((NP)|(PP)) )")
+                    pattern = nltk.ParentedTree.fromstring("(SBAR (IN) (S))")
                 elif Q[0] == 'how':
                     pattern = nltk.ParentedTree.fromstring("(RB)")
-
+                ############################################
+                if question["qid"] == 'mc500.train.18.18':
+                    print(pattern)
+                ############################################
                 # Find and make the answer
                 # print(subtree)
                 subtree2 = pattern_matcher(pattern, subtree)
