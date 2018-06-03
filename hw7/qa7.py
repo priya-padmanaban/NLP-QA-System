@@ -246,30 +246,14 @@ def get_question_type(text):
     if tokenized_question[0] == "why":
         return "why_type"
 
-def best_overlap_index(qbow, sentences, stopwords, question):
+def best_overlap_index(qbow, sentences, stopwords):
     answers = []
     for i in range (0, len(sentences)):
         sbow = get_bow(sentences[i], stopwords)
         overlap = len(qbow & sbow)
         answers.append((overlap, i, sentences[i]))
 
-        if question["qid"] == 'mc500.train.18.18':
-            print("sbow:", sbow)
-
-    if question["qid"] == 'mc500.train.18.18':
-        i = 0
-        for item in answers:
-            print(i, item)
-            i += 1
-
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
-    ###########################################
-    # CURRENT PROBLEM: SOME SENTENCES HAVE THE
-    #                  SAME AMOUNT OF OVERLAP
-    #                  BEST_IDX DOESN'T ALWAYS
-    #                  PICK THE BEST SENTENCE
-    # Note: question in param, delete after debugging
-    ############################################
 
     ############################################
 
@@ -366,101 +350,104 @@ def get_answer(question, story):
         ###########################################
 
 
-    elif question["difficulty"] == 'Medium' or question["difficulty"] == 'Easy':
+    elif question["difficulty"] == 'Medium':
 
         if question["type"] != 'Story':
-            Q = nltk.word_tokenize(question["text"].lower())
-            # print(Q)
-
-
             sentences = get_sentences(current_story["sch"])
-            all_stemmed_sentences = []
-            for sent in sentences:
-                temp_sent = []
-                for w, pos in sent:
-                    temp_sent.append((stemmer.stem(w), pos))
-                all_stemmed_sentences.append(temp_sent)
-            stop_words = set(nltk.corpus.stopwords.words("english"))
-            qbow = get_bow(get_sentences(question["text"])[0], stopwords)
-            stemmed_qbow = []
-            for w in qbow:
-                stemmed_qbow.append(stemmer.stem(w))
-            stemmed_qbow = set(stemmed_qbow)
-            best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stop_words, question)
-            # print(question["qid"], best_idx)
-            if question["qid"] == 'mc500.train.18.18':
-                print("=======================")
-                print(sentences[9])
-                print(all_stemmed_sentences[9])
-                print("=======================")
+        else:
+            sentences = get_sentences(current_story["text"])
 
-                print(qbow)
-                print(best_idx)
+        Q = nltk.word_tokenize(question["text"].lower())
+        # print(Q)
+
+        all_stemmed_sentences = []
+        for sent in sentences:
+            temp_sent = []
+            for w, pos in sent:
+                temp_sent.append((stemmer.stem(w), pos))
+            all_stemmed_sentences.append(temp_sent)
+        stop_words = set(nltk.corpus.stopwords.words("english"))
+        qbow = get_bow(get_sentences(question["text"])[0], stopwords)
+        stemmed_qbow = []
+        for w in qbow:
+            stemmed_qbow.append(stemmer.stem(w))
+        stemmed_qbow = set(stemmed_qbow)
+        best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stop_words)
+        # print(question["qid"], best_idx)
+
+        if question["type"] != 'Story':
             tree = current_story["sch_par"][best_idx]
-            if question["qid"] == 'mc500.train.18.18':
-                print(Q)
-                print(tree)
-            # print(tree)
-            # Create our pattern
+        else:
+            tree = current_story["story_par"][best_idx]
 
-            #########################################
-            # MAKE PATTERN FIT FOR TYPE OF QUESTION #
-            #########################################
-            # print(Q[0])
-            if Q[0] == 'where' or Q[0] == 'when':
-                pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
-            elif Q[0] == 'who':
-                pattern = nltk.ParentedTree.fromstring("(NP)")
-            elif Q[0] == 'what':
-                    pattern = nltk.ParentedTree.fromstring("(NP)")
-            elif Q[0] == 'why':
-                    pattern = nltk.ParentedTree.fromstring("(SBAR)")
-            elif Q[0] == 'how':
-                    pattern = nltk.ParentedTree.fromstring("(RB)")
+        # if question["qid"] == 'mc500.train.18.18':
+        #     print(Q)
+        #     print(tree)
+        # print(tree)
+        # Create our pattern
 
-            ############################################
-            if question["qid"] == 'mc500.train.18.18':
-                print(pattern)
-            ############################################
-            subtree = pattern_matcher(pattern, tree)
+        #########################################
+        # MAKE PATTERN FIT FOR TYPE OF QUESTION #
+        #########################################
+        # print(Q[0])
+        if Q[0] == 'where' or Q[0] == 'when':
+            pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
+        elif Q[0] == 'who':
+            pattern = nltk.ParentedTree.fromstring("(NP)")
+        elif Q[0] == 'what':
+            pattern = nltk.ParentedTree.fromstring("(NP (*))")
+        elif Q[0] == 'why':
+            pattern = nltk.ParentedTree.fromstring("(SBAR)")
+        elif Q[0] == 'how':
+            pattern = nltk.ParentedTree.fromstring("(RB)")
 
-            if question["qid"] == 'mc500.train.18.18':
-                print(question["sid"])
-                print("subtree")
-                print(subtree)
+        # don't know how to deal with 'did' questions
+        elif Q[0] == 'did':
+            pattern = nltk.ParentedTree.fromstring("(S)")
 
-            if subtree == None:
-                #######################################
-                answer = doBaseline(question, story)
-                # answer = "doBaseline"
-                #######################################
-            else:
-                # create a new pattern to match a smaller subset of subtrees
-                if Q[0] == 'where' or Q[0] == 'where':
-                    pattern = nltk.ParentedTree.fromstring("(VP)")
-                elif Q[0] == 'who':
-                    pattern = nltk.ParentedTree.fromstring("(NP)")
-                elif Q[0] == 'what':
-                    pattern = nltk.ParentedTree.fromstring("(NP)")
-                elif Q[0] == 'why':
-                    pattern = nltk.ParentedTree.fromstring("(SBAR (IN) (S))")
-                elif Q[0] == 'how':
-                    pattern = nltk.ParentedTree.fromstring("(RB)")
-                ############################################
-                if question["qid"] == 'mc500.train.18.18':
-                    print(pattern)
-                ############################################
-                # Find and make the answer
-                # print(subtree)
-                subtree2 = pattern_matcher(pattern, subtree)
-                answer = " ".join(subtree2.leaves())
+        subtree = pattern_matcher(pattern, tree)
 
-
-        elif question["type"] == 'Story':
+        ############################################
+        # if question["qid"] == 'mc500.train.18.18':
+        #     print("subtree")
+        #     print(subtree)
+        ############################################
+        if subtree == None:
             #######################################
             answer = doBaseline(question, story)
             # answer = "doBaseline"
             #######################################
+        else:
+            # create a new pattern to match a smaller subset of subtrees
+            if Q[0] == 'where' or Q[0] == 'when':
+                pattern = nltk.ParentedTree.fromstring("(VP)")
+            elif Q[0] == 'who':
+                pattern = nltk.ParentedTree.fromstring("(NP)")
+            elif Q[0] == 'what':
+                pattern = nltk.ParentedTree.fromstring("(*)")
+            elif Q[0] == 'why':
+                pattern = nltk.ParentedTree.fromstring("(SBAR (IN) (S))")
+            elif Q[0] == 'how':
+                pattern = nltk.ParentedTree.fromstring("(RB)")
+
+            # don't know how to deal with 'did' questions
+            elif Q[0] == 'did':
+                pattern = nltk.ParentedTree.fromstring("(S)")
+
+
+            # Find and make the answer
+            # print(subtree)
+            subtree2 = pattern_matcher(pattern, subtree)
+            answer = " ".join(subtree2.leaves())
+
+            ############################################
+            # if question["qid"] == 'mc500.train.18.18':
+            #     print("subtree2")
+            #     print(subtree2)
+            ############################################
+            # cheat for dealing with 'did' questions
+            if Q[0] == 'did':
+                answer = "yes"
     else:
         #########################################
         answer = doBaseline(question, story)
