@@ -6,8 +6,8 @@ def score_all_answers(gold, pred):
     all_scores = {"p": [], "r": [], "f": []}
     for row in gold.itertuples():
 
-        # print("-"*40)
-        # print("\nSCORING {}\n".format(row.Index))
+        print("-"*40)
+        print("\nSCORING {}\n".format(row.Index))
 
         golds = row.answer.lower().split("|")
         scores = {"p": [], "r": [], "f": []}
@@ -42,17 +42,17 @@ def score_all_answers(gold, pred):
         best = np.argmax(scores["f"])
         best_gold = golds[best]
 
-        # print('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
+        print('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
         all_scores["p"].append(scores["p"][best])
         all_scores["r"].append(scores["r"][best])
         all_scores["f"].append(scores["f"][best])
 
         r, p, f = scores["r"][best], scores["p"][best], scores["f"][best]
         #print("===> ", r, p, f)
-        # print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
+        print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
 
-    # print("-" * 40)
-    # print("done! \n")
+    print("-" * 40)
+    print("done! \n")
     return np.mean(all_scores["p"]), np.mean(all_scores["r"]), np.mean(all_scores["f"])
 
 
