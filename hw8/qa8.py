@@ -382,28 +382,6 @@ def get_answer(question, story):
         # print(tree)
         # Create our pattern
 
-        # First level subtree matching
-        # candidate_sents = []
-        #
-        # for sub in tree:
-        #     subsent = " ".join(sub.leaves())
-        #     candidate_sents.append(subsent)
-        #
-        # stemmed_candidate_sents = []
-        # for s in candidate_sents:
-        #     temp_candidate_sents = []
-        #     s = nltk.word_tokenize(s)
-        #     s = nltk.pos_tag(s)
-        #
-        #     for w, p in s:
-        #         temp_candidate_sents.append((stemmer.stem(w), p))
-        #     stemmed_candidate_sents.append(temp_candidate_sents)
-        #
-        # best_idx = best_overlap_index(stemmed_qbow, stemmed_candidate_sents, stopwords)
-        # tree = tree[best_idx]
-        # if question["qid"] == 'mc500.train.18.18':
-        #     print(tree)
-
         #########################################
         # MAKE PATTERN FIT FOR TYPE OF QUESTION #
         #########################################
@@ -456,7 +434,13 @@ def get_answer(question, story):
             # Find and make the answer
             # print(subtree)
             subtree2 = pattern_matcher(pattern, subtree1)
-            answer = " ".join(subtree2.leaves())
+            if subtree2 == None:
+                #######################################
+                answer = doBaseline(question, story)
+                # answer = "doBaseline"
+                #######################################
+            else:
+                answer = " ".join(subtree2.leaves())
 
             ############################################
             # if question["qid"] == 'mc500.train.18.18':
@@ -467,7 +451,7 @@ def get_answer(question, story):
             if Q[0] == 'did':
                 answer = "yes"
 
-
+    
 
     else:
         #########################################
