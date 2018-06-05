@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7/hw7-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/hw7-responses.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw7/qa_engine/score_answers.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw7/qa_engine/score_answers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw8/hw8-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/hw8-responses.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw8/qa8.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/qa8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw8/wordnet_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/wordnet_demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +19,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="qa8.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="qa8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw8/qa8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2851">
-              <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+            <state relative-caret-position="278">
+              <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#1022#1204#0" />
+                <element signature="e#1235#1265#0" />
+                <element signature="e#1295#1325#0" />
+                <element signature="e#1356#1386#0" />
+                <element signature="e#1478#1508#0" />
+                <element signature="e#1624#1646#0" />
+                <element signature="e#1708#1730#0" />
+                <element signature="e#1763#2415#0" />
+                <element signature="e#2440#2574#0" />
+                <element signature="e#2600#3022#0" />
+                <element signature="e#3253#4066#0" />
+                <element signature="e#4114#4582#0" />
+                <element signature="e#4887#6072#0" />
+                <element signature="e#6114#6255#0" />
+                <element signature="e#6510#6592#0" />
+                <element signature="e#6640#7309#0" />
+                <element signature="e#7434#7750#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qa7.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2249">
+              <caret line="446" column="71" selection-start-line="446" selection-start-column="56" selection-end-line="446" selection-end-column="71" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -32,10 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wordnet_demo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="wordnet_demo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw8/wordnet_demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="172">
+              <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="39" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -51,7 +80,6 @@
       <find>dobaseline</find>
       <find>baseline</find>
       <find>sch</find>
-      <find>stopword</find>
       <find>tokenized_question</find>
       <find>get_sente</find>
       <find>get_sentences</find>
@@ -59,6 +87,10 @@
       <find>sentences =</find>
       <find>find_candidates</find>
       <find>best_overlap</find>
+      <find>stopword</find>
+      <find>stop_word</find>
+      <find>stop_words</find>
+      <find>&quot;yes&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,9 +104,10 @@
         <option value="$PROJECT_DIR$/hw7/constituency-demo-stub.py" />
         <option value="$PROJECT_DIR$/hw7/baseline-stub.py" />
         <option value="$PROJECT_DIR$/hw7/qa_engine/score_answers.py" />
-        <option value="$PROJECT_DIR$/hw8/qa8.py" />
         <option value="$PROJECT_DIR$/hw7/qa7.py" />
         <option value="$PROJECT_DIR$/hw7/qa8.py" />
+        <option value="$PROJECT_DIR$/hw8/wordnet_demo.py" />
+        <option value="$PROJECT_DIR$/hw8/qa8.py" />
       </list>
     </option>
   </component>
@@ -88,8 +121,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1120" />
-    <option name="width" value="2735" />
+    <option name="x" value="1307" />
+    <option name="width" value="2548" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -108,6 +141,11 @@
             <path>
               <item name="NLP-QA-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="NLP-QA-System" type="462c0819:PsiDirectoryNode" />
+              <item name="hw7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NLP-QA-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NLP-QA-System" type="462c0819:PsiDirectoryNode" />
               <item name="hw8" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -121,6 +159,12 @@
               <item name="NLP-QA-System" type="462c0819:PsiDirectoryNode" />
               <item name="hw8" type="462c0819:PsiDirectoryNode" />
               <item name="qa_engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NLP-QA-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NLP-QA-System" type="462c0819:PsiDirectoryNode" />
+              <item name="hw8" type="462c0819:PsiDirectoryNode" />
+              <item name="wordnet" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -186,7 +230,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="448" y="0" width="1094" height="830" extended-state="0" />
+    <frame x="523" y="0" width="1019" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -196,7 +240,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32902297" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19208494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20707597" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -246,7 +290,24 @@
         <state relative-caret-position="6494">
           <caret line="382" column="28" selection-start-line="382" selection-start-column="28" selection-end-line="382" selection-end-column="28" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1022#1204#0" />
+            <element signature="e#1235#1265#0" />
+            <element signature="e#1295#1325#0" />
+            <element signature="e#1356#1386#0" />
+            <element signature="e#1478#1508#0" />
+            <element signature="e#1624#1646#0" />
+            <element signature="e#1708#1730#0" />
+            <element signature="e#1763#2415#0" />
+            <element signature="e#2440#2574#0" />
+            <element signature="e#2600#3022#0" />
+            <element signature="e#3253#4066#0" />
+            <element signature="e#4114#4582#0" />
+            <element signature="e#4887#6072#0" />
+            <element signature="e#6114#6255#0" />
+            <element signature="e#6510#6592#0" />
+            <element signature="e#6640#7309#0" />
+            <element signature="e#7434#7750#0" />
           </folding>
         </state>
       </provider>
@@ -291,13 +352,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa.py" />
-    <entry file="file://$PROJECT_DIR$/../assignment6/submit/qa.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa.py" />
     <entry file="file://$PROJECT_DIR$/hw7/chunk-demo.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -332,16 +386,6 @@
         <state relative-caret-position="-5194" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="323" column="23" selection-start-line="323" selection-start-column="11" selection-end-line="323" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hw7/qa8.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-807">
@@ -362,10 +406,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw8/qa8.py">
+    <entry file="file://$PROJECT_DIR$/../assignment6/submit/qa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2851">
-          <caret line="321" column="12" lean-forward="true" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="12" />
+        <state relative-caret-position="153">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw6/qa6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -374,9 +424,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw8/wordnet_demo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="172">
+          <caret line="93" column="39" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="39" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw7/qa7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2249">
+          <caret line="446" column="71" selection-start-line="446" selection-start-column="56" selection-end-line="446" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hw8/qa8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#1022#1204#0" />
+            <element signature="e#1235#1265#0" />
+            <element signature="e#1295#1325#0" />
+            <element signature="e#1356#1386#0" />
+            <element signature="e#1478#1508#0" />
+            <element signature="e#1624#1646#0" />
+            <element signature="e#1708#1730#0" />
+            <element signature="e#1763#2415#0" />
+            <element signature="e#2440#2574#0" />
+            <element signature="e#2600#3022#0" />
+            <element signature="e#3253#4066#0" />
+            <element signature="e#4114#4582#0" />
+            <element signature="e#4887#6072#0" />
+            <element signature="e#6114#6255#0" />
+            <element signature="e#6510#6592#0" />
+            <element signature="e#6640#7309#0" />
+            <element signature="e#7434#7750#0" />
           </folding>
         </state>
       </provider>

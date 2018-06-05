@@ -30,6 +30,14 @@ if __name__ == "__main__":
     #noun_ids = pickle.load(open("Wordnet_nouns.dict", "rb"))
     #verb_ids = pickle.load(open("Wordnet_verbs.dict", "rb"))
 
+    ####################################################################################
+    # My own code documentations:
+    # items is a dictionary, per synset_id, we have:
+    #                   {'synset_offset': '7-digit number',
+    #                   'story_noun': 'each noun word correlated with synset_id',
+    #                   'stories': "'story-id.vgl'"}
+    ####################################################################################
+
     # iterate through dictionary
     for synset_id, items in noun_ids.items():
         noun = items['story_noun']
@@ -46,21 +54,37 @@ if __name__ == "__main__":
 
     # 'Rodent' is a hypernym of 'mouse',
     # so we look at hyponyms of 'rodent' to find 'mouse'
-    #
+
     # Question: Where did the rodent run into?
     # Answer: the face of the lion
     # Sch: The lion awaked because a mouse ran into the face of the lion.
     rodent_synsets = wn.synsets("rodent")
+    ####################################################################################
+    # My own code documentations:
+    # returns
+    # [Synset('rodent.n.01')]
+    ####################################################################################
     print("'Rodent' synsets: %s" % rodent_synsets)
 
     print("'Rodent' hyponyms")
     for rodent_synset in rodent_synsets:
+        ####################################################################################
+        # My own code documentations:
+        # since there is only one synset of rodent, then the print statement
+        # prints out the hyponyms for that synset
+        ####################################################################################
         rodent_hypo = rodent_synset.hyponyms()
-        print("%s: %s" % (rodent_synset, rodent_hypo))
+        # print("%s: %s" % (rodent_synset, rodent_hypo))
 
         for hypo in rodent_hypo:
+            ####################################################################################
+            # My own code documentations:
+            # for each synset of the hypo of rodent,
+            # hypo.name() is in the format of the string: 'mouse.n.01'
+            # hypo.name()[0:hypo.name().index(".")] returns the first part, which is just 'mouse'
+            ####################################################################################
             print(hypo.name()[0:hypo.name().index(".")])
-            print("is hypo_synset in Wordnet_nouns/verbs.csv?")
+            # print("is hypo_synset in Wordnet_nouns/verbs.csv?")
             # match on "mouse.n.01"
 
 
