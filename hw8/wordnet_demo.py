@@ -94,7 +94,7 @@ if __name__ == "__main__":
     # Question: What did the mouse know?
     # Answer: the voice of the lion
     # Sch: The mouse recognized the voice of the lion.
-    know_synsets = wn.synsets("know")
+    know_synsets = wn.synsets("mirth express")
     print("\n'Know' synsets: %s" % know_synsets)
 
     print("'Know' hypernyms")

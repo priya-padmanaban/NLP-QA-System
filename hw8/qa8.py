@@ -1,12 +1,15 @@
-import re, sys, nltk, operator, string
+import re, sys, nltk, operator, string, csv
 from qa_engine.base import QABase
 from qa_engine.score_answers import main as score_answers
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
-import csv
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
+from nltk.collocations import *
+
+
+DATA_DIR = "./wordnet"
 
 # Our simple grammar from class (and the book)
 GRAMMAR =   """
@@ -25,6 +28,8 @@ WHO_N = set(["the", "The", "I", "a", "A"])
 HOW_HOW = set([""])
 
 VERBS = ['VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
+
+stemmer = SnowballStemmer("english")
 
 #########################################################################################
 # Chunking helper functions
@@ -207,6 +212,9 @@ def pattern_matcher(pattern, tree):
 def get_bow(tagged_tokens, stopwords):
     return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
+def get_ordered_bow(tagged_tokens, stopwords):
+    return [t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords]
+
 def baseline(qbow, sentences, stopwords):
     # Collect all the candidate answers
     answers = []
@@ -254,18 +262,25 @@ def get_question_type(text):
     if tokenized_question[0] == "why":
         return "why_type"
 
-def best_overlap_index(qbow, sentences, stopwords, question):
+def best_overlap_index(stemmed_qbow, sentences, stopwords, question):
     answers = []
     for i in range (0, len(sentences)):
         sbow = get_bow(sentences[i], stopwords)
-        overlap = len(qbow & sbow)
+        # if question["qid"] == 'fables-06-14' and i == 8:
+        #     print(sentences[i])
+        #     print("=====================================")
+        #     print(stemmed_qbow)
+        #     if 'laugh' in list(stemmed_qbow):
+        #         print("yessssssssssssssssss")
+        #     print(stemmed_qbow & sbow)
+        overlap = len(stemmed_qbow & sbow)
         answers.append((overlap, i, sentences[i]))
 
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
     ###########################################################
-    # if question["qid"] == 'fables-04-6':
-    #     print("answers:", answers)
-    #     print(len(answers))
+    # if question["qid"] == 'fables-06-14':
+    #     for answer in answers:
+    #         print(answer[0], answer[1], answer[2][0])
     ###########################################################
     # return best index for the most overlap
     best_answer = (answers[0])[1]
@@ -308,7 +323,7 @@ def get_answer(question, story):
     ###     Your Code Goes Here         ###
     # Our tools
 
-    stemmer = SnowballStemmer("english")
+    # stemmer = SnowballStemmer("english")
     chunker = nltk.RegexpParser(GRAMMAR)
     lmtzr = WordNetLemmatizer()
 
@@ -523,7 +538,7 @@ def get_answer(question, story):
                 answer = "yes"
 
 
-    elif question["difficulty"] == 'Hard':
+    elif question["difficulty"] == 'Hard' or question["difficulty"] == 'Discourse':
 
         if question["type"] != 'Story':
             sentences = get_sentences(current_story["sch"])
@@ -539,12 +554,118 @@ def get_answer(question, story):
             for w, pos in sent:
                 temp_sent.append((stemmer.stem(w), pos))
             all_stemmed_sentences.append(temp_sent)
+
         qbow = get_bow(get_sentences(question["text"])[0], stopwords)
+        ordered_qbow = get_ordered_bow(get_sentences(question["text"])[0], stopwords)
         stemmed_qbow = []
         for w in qbow:
             stemmed_qbow.append(stemmer.stem(w))
         stemmed_qbow = set(stemmed_qbow)
-        # print(stemmed_qbow)
+
+        stemmed_ordered_qbow = []
+        for w in ordered_qbow:
+            stemmed_ordered_qbow.append(stemmer.stem(w))
+
+        joined_grams = []
+        # create bigrams and trigrams, then find collocations
+        if len(stemmed_qbow) >= 2:
+            bigrams = list(nltk.bigrams(stemmed_ordered_qbow))
+            joined_grams += ['_'.join(b) for b in bigrams]
+        if len(stemmed_qbow) > 2:
+            trigrams = list(nltk.trigrams(stemmed_ordered_qbow))
+            joined_grams += ['_'.join(t) for t in trigrams]
+
+        stemmed_qbow = stemmed_qbow.union(set(joined_grams))
+
+
+        #######################################
+        # Collect hypernyms, hyponyms, lemmas #
+        #######################################
+        noun_ids = load_wordnet_ids("{}/{}".format(DATA_DIR, "Wordnet_nouns.csv"))
+        verb_ids = load_wordnet_ids("{}/{}".format(DATA_DIR, "Wordnet_verbs.csv"))
+
+        # {synset_id : {synset_offset: X, noun/verb: Y, stories: set(Z)}}, ...}
+        # e.g. {help.v.01: {synset_offset: 2547586, noun: aid, stories: set(Z)}}, ...
+        # noun_ids = pickle.load(open("Wordnet_nouns.dict", "rb"))
+        # verb_ids = pickle.load(open("Wordnet_verbs.dict", "rb"))
+
+        ####################################################################################
+        # My own code documentations:
+        # items is a dictionary, per synset_id, we have:
+        #                   {'synset_offset': '7-digit number',
+        #                   'story_noun': 'each noun word correlated with synset_id',
+        #                   'stories': "'story-id.vgl'"}
+        ####################################################################################
+
+        # iterate through dictionary
+        for synset_id, items in noun_ids.items():
+            noun = items['story_noun']
+            stories = items['stories']
+            # print(noun, stories)
+            # get lemmas, hyponyms, hypernyms
+
+        for synset_id, items in verb_ids.items():
+            verb = items['story_verb']
+            stories = items['stories']
+            # print(verb, stories)
+            # get lemmas, hyponyms, hypernyms
+
+        hypo_dict = {}
+        hyper_dict = {}
+        lemma_dict = {}
+
+        for word in stemmed_qbow:
+            word_synsets = wn.synsets(word)
+
+            # hyponyms
+            temp_this_word_hyponyms = []
+            for word_synset in word_synsets:
+                word_hypo = word_synset.hyponyms()
+                temp_curr_hyponyms = []
+                for hypo in word_hypo:
+                    temp_curr_hyponyms.append(hypo.name()[0:hypo.name().index(".")])
+                temp_this_word_hyponyms += temp_curr_hyponyms
+            hypo_dict[word] = temp_this_word_hyponyms
+
+            # hyperyms
+            temp_this_word_hypernyms = []
+            for word_synset in word_synsets:
+                word_hyper = word_synset.hypernyms()
+                temp_curr_hypernyms = []
+                for hyper in word_hyper:
+                    temp_curr_hypernyms.append(hyper.name()[0:hyper.name().index(".")])
+                temp_this_word_hypernyms += temp_curr_hypernyms
+            hyper_dict[word] = temp_this_word_hypernyms
+
+            # lemmas
+            temp_this_word_lemmas = [word]
+            for word_synset in word_synsets:
+                temp_this_word_lemmas.append(word_synset.name()[0:word_synset.name().index(".")])
+            lemma_dict[word] = temp_this_word_lemmas
+
+        # combine hyponyms, hypernyms, lemmas with stemmed_qbow
+        
+        # hyponyms
+        syn_list = set([])
+        for stemmed_qbow_word in stemmed_qbow:
+            for hypo in hypo_dict[stemmed_qbow_word]:
+                syn_list.add(hypo)
+
+        # hypernyms
+        for stemmed_qbow_word in stemmed_qbow:
+            for hyper in hyper_dict[stemmed_qbow_word]:
+                syn_list.add(hyper)
+                # if question["qid"] == 'fables-06-14':
+                #     print(stemmed_qbow_word)
+                #     print(hyper)
+
+        # lemmas
+        for stemmed_qbow_word in stemmed_qbow:
+            for lemma in lemma_dict[stemmed_qbow_word]:
+                syn_list.add(lemma)
+
+        stemmed_qbow = stemmed_qbow.union(syn_list)
+
         best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
         # print(question["qid"], best_idx)
 
@@ -631,119 +752,6 @@ def get_answer(question, story):
             if Q[0] == 'did':
                 answer = "yes"
 
-
-    elif question["difficulty"] == 'Discourse':
-
-        if question["type"] != 'Story':
-            sentences = get_sentences(current_story["sch"])
-        else:
-            sentences = get_sentences(current_story["text"])
-
-        Q = nltk.word_tokenize(question["text"].lower())
-        # print(Q)
-
-        all_stemmed_sentences = []
-        for sent in sentences:
-            temp_sent = []
-            for w, pos in sent:
-                temp_sent.append((stemmer.stem(w), pos))
-            all_stemmed_sentences.append(temp_sent)
-        qbow = get_bow(get_sentences(question["text"])[0], stopwords)
-        stemmed_qbow = []
-        for w in qbow:
-            stemmed_qbow.append(stemmer.stem(w))
-        stemmed_qbow = set(stemmed_qbow)
-        # print(stemmed_qbow)
-        best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
-        # print(question["qid"], best_idx)
-
-        if question["type"] != 'Story':
-            tree = current_story["sch_par"][best_idx]
-        else:
-            tree = current_story["story_par"][best_idx]
-
-        #############################################
-        # if question["qid"] == 'blogs-03-13':
-        #     print(Q)
-        #     print(tree)
-        #     print("++++++++++++++++++++++++++++++++++++++++++++++")
-        ############################################
-        # print(tree)
-        # Create our pattern
-
-        #########################################
-        # MAKE PATTERN FIT FOR TYPE OF QUESTION #
-        #########################################
-        # print(Q[0])
-        if ('where' in Q) or ('when' in Q):
-            pattern = nltk.ParentedTree.fromstring("(PP)")
-        elif 'who' in Q:
-            pattern = nltk.ParentedTree.fromstring("(NP)")
-        elif ('what' in Q) or ('which' in Q):
-            pattern = nltk.ParentedTree.fromstring("(NP)")
-        elif 'why' in Q:
-            pattern = nltk.ParentedTree.fromstring("(SBAR)")
-        elif 'how' in Q:
-            pattern = nltk.ParentedTree.fromstring("(RB)")
-
-            # don't know how to deal with 'did' questions
-        elif 'did' in Q:
-            pattern = nltk.ParentedTree.fromstring("(S)")
-
-        q_starts = ['where', 'when', 'after', 'in', 'who', 'what', 'why', 'how', 'did', 'which']
-        if Q[0] not in q_starts:
-            print(Q[0], pattern)
-            exit(0)
-        subtree1 = pattern_matcher(pattern, tree)
-
-        ############################################
-        # if question["qid"] == 'blogs-03-13':
-        #     print("subtree1")
-        #     print(subtree1)
-        ############################################
-        if subtree1 == None:
-            #######################################
-            answer = doBaseline(question, story)
-            # answer = "doBaseline"
-            #######################################
-        else:
-            # create a new pattern to match a smaller subset of subtrees
-            if Q[0] == 'where' or Q[0] == 'when':
-                pattern = nltk.ParentedTree.fromstring("(PP)")
-            elif Q[0] == 'who':
-                pattern = nltk.ParentedTree.fromstring("(NP)")
-            elif Q[0] == 'what':
-                pattern = nltk.ParentedTree.fromstring("(NP)")
-            elif Q[0] == 'why':
-                pattern = nltk.ParentedTree.fromstring("(SBAR)")
-            elif Q[0] == 'how':
-                pattern = nltk.ParentedTree.fromstring("(RB)")
-
-            # don't know how to deal with 'did' questions
-            elif 'did' in Q:
-                pattern = nltk.ParentedTree.fromstring("(S)")
-
-
-            # Find and make the answer
-            # print(subtree)
-            subtree2 = pattern_matcher(pattern, subtree1)
-            if subtree2 == None:
-                #######################################
-                answer = doBaseline(question, story)
-                # answer = "doBaseline"
-                #######################################
-            else:
-                answer = " ".join(subtree2.leaves())
-
-            ############################################
-            # if question["qid"] == 'mc500.train.18.18':
-            #     print("subtree2")
-            #     print(subtree2)
-            ############################################
-            # cheat for dealing with 'did' questions
-            if Q[0] == 'did':
-                answer = "yes"
-
     else:
         #########################################
         answer = doBaseline(question, story)
@@ -751,6 +759,7 @@ def get_answer(question, story):
         #########################################
 
     ###     End of Your Code         ###
+
     return answer
 
 def doBaseline(question, story):
