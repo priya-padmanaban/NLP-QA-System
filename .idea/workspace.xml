@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efde348d-e921-4713-a6e5-1a677be70a98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw8/hw8-responses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/hw8-responses.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw8/qa8.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/qa8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw8/wordnet_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw8/wordnet_demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +20,8 @@
       <file leaf-file-name="qa8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw8/qa8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="540" column="82" lean-forward="true" selection-start-line="540" selection-start-column="42" selection-end-line="540" selection-end-column="82" />
+            <state relative-caret-position="339">
+              <caret line="541" column="32" selection-start-line="541" selection-start-column="32" selection-end-line="541" selection-end-column="32" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
                 <element signature="e#1022#1204#0" />
@@ -140,9 +138,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-15" />
-    <option name="width" value="1948" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1245" />
+    <option name="width" value="2610" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -250,7 +248,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
+    <frame x="498" y="0" width="1044" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -260,7 +258,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32902297" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13346747" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20182556" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -292,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hw8/qa8.py</url>
-          <line>616</line>
+          <line>622</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
@@ -468,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw8/qa8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="540" column="82" lean-forward="true" selection-start-line="540" selection-start-column="42" selection-end-line="540" selection-end-column="82" />
+        <state relative-caret-position="339">
+          <caret line="541" column="32" selection-start-line="541" selection-start-column="32" selection-end-line="541" selection-end-column="32" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
             <element signature="e#1022#1204#0" />

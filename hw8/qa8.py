@@ -28,6 +28,7 @@ WHO_N = set(["the", "The", "I", "a", "A"])
 HOW_HOW = set([""])
 
 VERBS = ['VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
+NEGATIONS = {"not", "n't"}
 
 stemmer = SnowballStemmer("english")
 
@@ -483,10 +484,11 @@ def get_answer(question, story):
             pattern = nltk.ParentedTree.fromstring("(SBAR)")
         elif 'how' in Q:
             pattern = nltk.ParentedTree.fromstring("(RB)")
-
             # don't know how to deal with 'did' questions
         elif 'did' in Q:
-            pattern = nltk.ParentedTree.fromstring("(S)")
+            pattern = nltk.ParentedTree.fromstring("(ROOT)")
+        else:
+            return doBaseline(question, story)
 
         subtree1 = pattern_matcher(pattern, tree)
 
@@ -514,7 +516,7 @@ def get_answer(question, story):
 
                 # don't know how to deal with 'did' questions
             elif 'did' in Q:
-                pattern = nltk.ParentedTree.fromstring("(S)")
+                pattern = nltk.ParentedTree.fromstring("(ROOT)")
 
 
             # Find and make the answer
@@ -535,7 +537,11 @@ def get_answer(question, story):
             ############################################
             # cheat for dealing with 'did' questions
             if Q[0] == 'did':
-                answer = "yes"
+                negations = len(set(nltk.word_tokenize(answer)) & NEGATIONS)
+                if negations > 0:
+                    answer = "no"
+                else:
+                    answer = "yes"
 
 
     elif question["difficulty"] == 'Hard' or question["difficulty"] == 'Discourse':
@@ -697,10 +703,11 @@ def get_answer(question, story):
             pattern = nltk.ParentedTree.fromstring("(SBAR)")
         elif 'how' in Q:
             pattern = nltk.ParentedTree.fromstring("(RB)")
-
             # don't know how to deal with 'did' questions
         elif 'did' in Q:
-            pattern = nltk.ParentedTree.fromstring("(S)")
+            pattern = nltk.ParentedTree.fromstring("(ROOT)")
+        else:
+            return doBaseline(question, story)
 
         subtree1 = pattern_matcher(pattern, tree)
 
@@ -729,7 +736,7 @@ def get_answer(question, story):
 
                 # don't know how to deal with 'did' questions
             elif 'did' in Q:
-                pattern = nltk.ParentedTree.fromstring("(S)")
+                pattern = nltk.ParentedTree.fromstring("(ROOT)")
 
 
             # Find and make the answer
@@ -750,7 +757,11 @@ def get_answer(question, story):
             ############################################
             # cheat for dealing with 'did' questions
             if Q[0] == 'did':
-                answer = "yes"
+                negations = len(set(nltk.word_tokenize(answer)) & NEGATIONS)
+                if negations > 0:
+                    answer = "no"
+                else:
+                    answer = "yes"
 
     else:
         #########################################
