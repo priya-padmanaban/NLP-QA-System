@@ -46,7 +46,7 @@ def score_all_answers(gold, pred):
 
         r, p, f = scores["r"][best], scores["p"][best], scores["f"][best]
         #print("===> ", r, p, f)
-        print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
+        # print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
 
     print("-" * 40)
     print("done! \n")

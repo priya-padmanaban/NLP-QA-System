@@ -263,30 +263,47 @@ def get_question_type(text):
     if tokenized_question[0] == "why":
         return "why_type"
 
-def best_overlap_index(stemmed_qbow, sentences, stopwords, question):
+def best_overlap_index(stemmed_qbow, pattern_qbow, sentences, stopwords, question):
     answers = []
     for i in range (0, len(sentences)):
         sbow = get_bow(sentences[i], stopwords)
-        # if question["qid"] == 'fables-06-14' and i == 8:
-        #     print(sentences[i])
-        #     print("=====================================")
-        #     print(stemmed_qbow)
-        #     if 'laugh' in list(stemmed_qbow):
-        #         print("yessssssssssssssssss")
-        #     print(stemmed_qbow & sbow)
+
+        # lemmas
+
+        synset = set([])
+        for word in sbow:
+            word_synsets = wn.synsets(word)
+            for word_synset in word_synsets:
+                synset.add(word_synset.name()[0:word_synset.name().index(".")])
+        sbow = sbow.union(synset)
+
         overlap = len(stemmed_qbow & sbow)
+
         answers.append((overlap, i, sentences[i]))
 
     answers = sorted(answers, key=operator.itemgetter(0), reverse=True)
-    ###########################################################
-    # if question["qid"] == 'fables-06-14':
-    #     for answer in answers:
-    #         print(answer[0], answer[1], answer[2][0])
-    ###########################################################
-    # return best index for the most overlap
+    # return best index for the most overlap of WORDS
     best_answer = (answers[0])[1]
+    ###########################################################
+    ############################################
+    if question["qid"] == 'mc500.train.18.18':
+        print("++++++++++++++++++++++++++++++++++")
+        test = get_bow(sentences[11], stopwords)
+        print(test)
+        print(stemmed_qbow)
+        print(len(answers))
+        print("")
+        for it in answers:
+            print(it)
+    ############################################
+    ###########################################################
     return best_answer
 
+def get_pattern_bow(tagged_tokens, stopwords):
+    # for t in tagged_tokens:
+    #     if t[0].lower() not in stopwords:
+    #         print(t[1])
+    return [t[1] for t in tagged_tokens if t[0].lower() not in stopwords]
 ########################################################################################
 def get_answer(question, story):
     """
@@ -326,7 +343,6 @@ def get_answer(question, story):
 
     # stemmer = SnowballStemmer("english")
     chunker = nltk.RegexpParser(GRAMMAR)
-    lmtzr = WordNetLemmatizer()
 
     driver = QABase()
 
@@ -343,20 +359,101 @@ def get_answer(question, story):
 
     stopwords = set(nltk.corpus.stopwords.words("english") + list(string.punctuation))
 
+    # if (question["difficulty"] == 'Easy'):
+    #
+    #
+    #
+    #     if question["type"] != 'Story':
+    #         sentences = get_sentences(current_story["sch"])
+    #         text = story["sch"]
+    #         text = nltk.sent_tokenize(text)
+    #
+    #     else:
+    #         sentences = get_sentences(current_story["text"])
+    #         text = story["text"]
+    #         text = nltk.sent_tokenize(text)
+    #
+    #     Q = nltk.word_tokenize(question["text"].lower())
+    #     # print(Q)
+    #
+    #     all_stemmed_sentences = []
+    #     for sent in sentences:
+    #         temp_sent = []
+    #         for w, pos in sent:
+    #             temp_sent.append((stemmer.stem(w), pos))
+    #         all_stemmed_sentences.append(temp_sent)
+    #     qbow = get_bow(get_sentences(question["text"])[0], stopwords)
+    #     stemmed_qbow = []
+    #     for w in qbow:
+    #         stemmed_qbow.append(stemmer.stem(w))
+    #     stemmed_qbow = set(stemmed_qbow)
+    #     best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
+    #     # print(question["qid"], best_idx)
+    #
+    #     # tokenize questions, also removing punctuations to extract keywords
+    #     tokenizer = RegexpTokenizer(r'\w+')
+    #     tokenized_question_text = tokenizer.tokenize(question["text"])
+    #     tagged_tokenized_question_text = nltk.pos_tag(tokenized_question_text)
+    #
+    #     # remove stopwords
+    #     tagged_keywords_list = []
+    #
+    #     for word, tag in tagged_tokenized_question_text:
+    #         if word not in stopwords:
+    #             tagged_keywords_list.append((word, tag))
+    #
+    #     # lemmatize keywords
+    #     lemmatized_keywords_list = []
+    #     for keyword, tag in tagged_keywords_list:
+    #         lemmatized_keywords_list.append(stemmer.stem(keyword))
+    #
+    #     #####################################################
+    #     # if question["qid"] == 'fables-04-6':
+    #     #     print("text:", text)
+    #     #     print("best index:", best_idx)
+    #     #     print("qid:", question["qid"])
+    #     #     print(text[best_idx])
+    #     #     print("==============================")
+    #     #     print(get_sentences("".join(text)))
+    #     #####################################################
+    #
+    #
+    #     best_sent = get_sentences(text[best_idx])
+    #
+    #     # Find the sentences that have all of our keywords in them
+    #     # Last time, 2nd arg is sentences = get_sentences(text) which returns tuple of each word
+    #     target_sentences = find_sentences(lemmatized_keywords_list, best_sent)
+    #     # Extract the candidate locations from these sentences
+    #     candidates_forest = find_candidates(target_sentences, chunker, question["text"])
+    #
+    #     if len(candidates_forest) == 0:
+    #         answer = doBaseline(question, story)
+    #     else:
+    #
+    #         possible_answers_list = []
+    #
+    #         # locations is a list of trees
+    #         for candidate in candidates_forest:
+    #             # candidate.draw()
+    #             possible_answers_list.append(" ".join([token[0] for token in candidate.leaves()]))
+    #         answer = " ".join(possible_answers_list)
+    #
+    #         ###########################################
+    #         # currently, possible_answer contains the actual needed answer,
+    #         # plus some garbage words around it from chunking,
+    #         # we might be able to filter this out SOMEHOW
+    #         # possible_answer is a list of strings
+    #         ###########################################
 
-    if (question["difficulty"] == 'Easy'):
 
+    #######################################
 
+    if question["difficulty"] == 'Medium' or (question["difficulty"] == 'Easy'):
 
         if question["type"] != 'Story':
             sentences = get_sentences(current_story["sch"])
-            text = story["sch"]
-            text = nltk.sent_tokenize(text)
-
         else:
             sentences = get_sentences(current_story["text"])
-            text = story["text"]
-            text = nltk.sent_tokenize(text)
 
         Q = nltk.word_tokenize(question["text"].lower())
         # print(Q)
@@ -367,93 +464,25 @@ def get_answer(question, story):
             for w, pos in sent:
                 temp_sent.append((stemmer.stem(w), pos))
             all_stemmed_sentences.append(temp_sent)
-        qbow = get_bow(get_sentences(question["text"])[0], stopwords)
-        stemmed_qbow = []
-        for w in qbow:
-            stemmed_qbow.append(stemmer.stem(w))
-        stemmed_qbow = set(stemmed_qbow)
-        best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
-        # print(question["qid"], best_idx)
 
-        # tokenize questions, also removing punctuations to extract keywords
-        tokenizer = RegexpTokenizer(r'\w+')
-        tokenized_question_text = tokenizer.tokenize(question["text"])
-        tagged_tokenized_question_text = nltk.pos_tag(tokenized_question_text)
-
-        # remove stopwords
-        tagged_keywords_list = []
-
-        for word, tag in tagged_tokenized_question_text:
-            if word not in stopwords:
-                tagged_keywords_list.append((word, tag))
-
-        # lemmatize keywords
-        lemmatized_keywords_list = []
-        for keyword, tag in tagged_keywords_list:
-            lemmatized_keywords_list.append(stemmer.stem(keyword))
-
-        #####################################################
-        # if question["qid"] == 'fables-04-6':
-        #     print("text:", text)
-        #     print("best index:", best_idx)
-        #     print("qid:", question["qid"])
-        #     print(text[best_idx])
-        #     print("==============================")
-        #     print(get_sentences("".join(text)))
-        #####################################################
-
-
-        best_sent = get_sentences(text[best_idx])
-
-        # Find the sentences that have all of our keywords in them
-        # Last time, 2nd arg is sentences = get_sentences(text) which returns tuple of each word
-        target_sentences = find_sentences(lemmatized_keywords_list, best_sent)
-        # Extract the candidate locations from these sentences
-        candidates_forest = find_candidates(target_sentences, chunker, question["text"])
-
-        if len(candidates_forest) == 0:
-            answer = doBaseline(question, story)
-        else:
-
-            possible_answers_list = []
-
-            # locations is a list of trees
-            for candidate in candidates_forest:
-                # candidate.draw()
-                possible_answers_list.append(" ".join([token[0] for token in candidate.leaves()]))
-            answer = " ".join(possible_answers_list)
-
-            ###########################################
-            # currently, possible_answer contains the actual needed answer,
-            # plus some garbage words around it from chunking,
-            # we might be able to filter this out SOMEHOW
-            # possible_answer is a list of strings
-            ###########################################
-
-
-    elif question["difficulty"] == 'Medium':
-
-        if question["type"] != 'Story':
-            sentences = get_sentences(current_story["sch"])
-        else:
-            sentences = get_sentences(current_story["text"])
-
-        Q = nltk.word_tokenize(question["text"].lower())
-        # print(Q)
-
-        all_stemmed_sentences = []
-        for sent in sentences:
-            temp_sent = []
-            for w, pos in sent:
-                temp_sent.append((stemmer.stem(w), pos))
-            all_stemmed_sentences.append(temp_sent)
+        # prepare qbow for word-overlapping
         qbow = get_bow(get_sentences(question["text"])[0], stopwords)
         stemmed_qbow = []
         for w in qbow:
             stemmed_qbow.append(stemmer.stem(w))
         stemmed_qbow = set(stemmed_qbow)
         # print(stemmed_qbow)
-        best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
+
+        # prepare pattern_qbow for pattern overlapping
+        pattern_qbow = get_pattern_bow(get_sentences(question["text"])[0], stopwords)
+
+        if question["qid"] == 'mc500.train.18.18':
+            print(get_sentences(question["text"]))
+            print(get_sentences(question["text"]))
+            print(stemmed_qbow)
+            print(pattern_qbow)
+
+        best_idx = best_overlap_index(stemmed_qbow, pattern_qbow, all_stemmed_sentences, stopwords, question)
         # print(question["qid"], best_idx)
 
         if question["type"] != 'Story':
@@ -479,7 +508,7 @@ def get_answer(question, story):
         elif 'who' in Q:
             pattern = nltk.ParentedTree.fromstring("(NP)")
         elif ('what' in Q) or ('which' in Q):
-            pattern = nltk.ParentedTree.fromstring("(NP)")
+            pattern = nltk.ParentedTree.fromstring("(VP (*) (NP)) ")
         elif 'why' in Q:
             pattern = nltk.ParentedTree.fromstring("(SBAR)")
         elif 'how' in Q:
@@ -493,9 +522,13 @@ def get_answer(question, story):
         subtree1 = pattern_matcher(pattern, tree)
 
         ############################################
-        # if question["qid"] == 'blogs-03-13':
-        #     print("subtree1")
-        #     print(subtree1)
+        if question["qid"] == 'mc500.train.18.18':
+            print(Q)
+            print(tree)
+            print("subtree1")
+            print(subtree1)
+
+
         ############################################
         if subtree1 == None:
             #######################################
@@ -571,6 +604,9 @@ def get_answer(question, story):
         stemmed_ordered_qbow = []
         for w in ordered_qbow:
             stemmed_ordered_qbow.append(stemmer.stem(w))
+
+        # prepare pattern_qbow for pattern overlapping
+        pattern_qbow = get_pattern_bow(get_sentences(question["text"])[0], stopwords)
 
         joined_grams = []
         # create bigrams and trigrams, then find collocations
@@ -672,7 +708,7 @@ def get_answer(question, story):
 
         stemmed_qbow = stemmed_qbow.union(syn_list)
 
-        best_idx = best_overlap_index(stemmed_qbow, all_stemmed_sentences, stopwords, question)
+        best_idx = best_overlap_index(stemmed_qbow, pattern_qbow, all_stemmed_sentences, stopwords, question)
         # print(question["qid"], best_idx)
 
         if question["type"] != 'Story':
