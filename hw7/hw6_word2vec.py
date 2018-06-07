@@ -1,6 +1,5 @@
 import zipfile, os
 import re, nltk
-import ../dependency_demo_stub
 from collections import OrderedDict
 from sklearn.metrics.pairwise import cosine_similarity
 from word2vec_extractor import Word2vecExtractor
